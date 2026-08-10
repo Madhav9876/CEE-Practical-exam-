@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CEE Nepal Exam Portal</title>
+  <style>
+    /* ===== Mobile-First Design ===== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #2b6cb0;
+      --primary-dark: #2c5282;
+      --success: #38a169;
+      --danger: #e53e3e;
+      --warning: #d69e2e;
+      --gray: #718096;
+      --light: #f7fafc;
+      --border: #e2e8f0;
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f0f4f8; color: #1a202c; min-height: 100vh; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 12px; }
+    .card { background: #fff; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); padding: 16px; margin-bottom: 16px; }
+    h1 { font-size: 1.4rem; color: var(--primary); }
+    h2 { font-size: 1.1rem; color: #2d3748; margin-bottom: 10px; }
+    h3 { font-size: 0.95rem; color: #4a5568; margin: 8px 0; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; }
+    .badge-draft { background: #e2e8f0; color: #4a5568; }
+    .badge-released { background: #c6f6d5; color: #22543d; }
+    .badge-pending { background: #fefcbf; color: #744210; }
+    .badge-archived { background: #fed7d7; color: #742a2a; }
+    .badge-blue { background: #bee3f8; color: #2c5282; }
+    .badge-syllabus { background: #e9d8fd; color: #553c9a; }
+    .btn { display: inline-block; padding: 10px 18px; border: none; border-radius: 8px; cursor: pointer; font-size: 0.9rem; font-weight: 600; transition: opacity 0.2s; text-decoration: none; width: 100%; text-align: center; }
+    .btn:hover { opacity: 0.85; }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-success { background: var(--success); color: #fff; }
+    .btn-danger { background: var(--danger); color: #fff; }
+    .btn-warning { background: var(--warning); color: #fff; }
+    .btn-secondary { background: var(--gray); color: #fff; }
+    .btn-sm { padding: 6px 12px; font-size: 0.8rem; width: auto; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    input, select, textarea { width: 100%; padding: 12px; border: 1px solid #cbd5e0; border-radius: 8px; font-size: 1rem; margin-bottom: 12px; }
+    label { display: block; font-size: 0.85rem; font-weight: 600; color: #4a5568; margin-bottom: 4px; }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .col { flex: 1; min-width: 100%; }
+    .nav { background: var(--primary); color: #fff; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .nav h1 { color: #fff; font-size: 1rem; }
+    .nav .user { font-size: 0.8rem; }
+    .nav button { background: transparent; border: 1px solid #fff; color: #fff; padding: 6px 12px; border-radius: 6px; cursor: pointer; margin-left: 8px; font-size: 0.8rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+    th { background: var(--light); color: #4a5568; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; }
+    tr:hover { background: var(--light); }
+    .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 16px; }
+    .stat { background: #fff; border-radius: 10px; padding: 14px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .stat .value { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+    .stat .label { font-size: 0.75rem; color: var(--gray); margin-top: 4px; }
+    .question-block { border: 1px solid var(--border); border-radius: 8px; padding: 14px; margin-bottom: 14px; background: #fafcff; }
+    .question-text { font-weight: 600; margin-bottom: 8px; font-size: 0.95rem; }
+    .option { display: flex; align-items: center; gap: 8px; padding: 12px; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 8px; cursor: pointer; transition: all 0.15s; font-size: 0.9rem; }
+    .option:hover { background: #ebf8ff; }
+    .option.selected { background: #bee3f8; border-color: var(--primary); }
+    .option.correct { background: #c6f6d5; border-color: var(--success); }
+    .option.incorrect { background: #fed7d7; border-color: var(--danger); }
+    .answer-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin: 12px 0; }
+    .answer-cell { width: 100%; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border: 1px solid #cbd5e0; border-radius: 6px; cursor: pointer; font-size: 0.75rem; font-weight: 600; }
+    .answer-cell.answered { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .timer { font-size: 1.1rem; font-weight: 700; color: var(--danger); }
+    .alert { padding: 10px 14px; border-radius: 6px; margin-bottom: 12px; font-size: 0.85rem; }
+    .alert-error { background: #fed7d7; color: #742a2a; }
+    .alert-success { background: #c6f6d5; color: #22543d; }
+    .alert-info { background: #bee3f8; color: #2c5282; }
+    .login-box { max-width: 100%; margin: 40px auto; }
+    .auth-hint { font-size: 0.8rem; color: var(--gray); background: var(--light); padding: 10px; border-radius: 6px; margin-top: 16px; line-height: 1.8; }
+    .comp-status { padding: 12px; border-radius: 6px; margin: 12px 0; font-size: 0.85rem; }
+    .comp-ok { background: #c6f6d5; color: #22543d; }
+    .comp-fail { background: #fed7d7; color: #742a2a; }
+    .muted { color: var(--gray); font-size: 0.8rem; }
+    .flex-between { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .mt-16 { margin-top: 16px; }
+    .mb-8 { margin-bottom: 8px; }
+    .option-label { font-weight: 700; color: var(--primary); min-width: 24px; }
+    .syllabus-tag { display: inline-block; background: #e9d8fd; color: #553c9a; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; margin-left: 6px; }
+
+    /* ===== Tablet (≥600px) ===== */
+    @media (min-width: 600px) {
+      .container { padding: 20px; }
+      .card { padding: 24px; }
+      .col { min-width: 280px; }
+      .stat-grid { grid-template-columns: repeat(4, 1fr); }
+      .answer-grid { grid-template-columns: repeat(10, 1fr); }
+      .login-box { max-width: 400px; margin: 80px auto; }
+      .btn { width: auto; }
+    }
+
+    /* ===== Desktop (≥900px) ===== */
+    @media (min-width: 900px) {
+      .row { gap: 16px; }
+      .col { min-width: 200px; }
+      .stat-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script>
+    const API = '/api/v1';
+    const SYLLABUS_LABELS = {
+      ce_2025: 'CEE 2025 (MBBS/BDS/Nursing)',
+      ce_2026: 'CEE 2026 (BAMS/MLT/BPT)',
+      bph: 'BPH',
+      bns: 'BNS'
+    };
+    let state = { token: localStorage.getItem('cee_token') || null, user: null, view: 'login' };
+
+    async function api(path, options = {}) {
+      const headers = { 'Content-Type': 'application/json' };
+      if (state.token) headers['Authorization'] = 'Bearer ' + state.token;
+      const res = await fetch(API + path, { ...options, headers });
+      const data = await res.json();
+      if (!data.success) throw new Error(data.error?.message || 'Request failed');
+      return data.data;
+    }
+
+    function navigate(view) { state.view = view; render(); }
+
+    function render() {
+      const app = document.getElementById('app');
+      if (!state.token) { renderLogin(app); return; }
+      if (!state.user) { loadMe().then(() => render()); return; }
+      if (state.view === 'login') {
+        state.view = state.user.role === 'student' ? 'student-dashboard' : 'teacher-dashboard';
+      }
+      if (state.user.role === 'student') {
+        if (state.view === 'attempt') renderAttempt(app);
+        else if (state.view === 'result') renderResult(app);
+        else renderStudentDashboard(app);
+      } else if (state.user.role === 'admin') {
+        renderAdminDashboard(app);
+      } else {
+        renderTeacherDashboard(app);
+      }
+    }
+
+    async function loadMe() {
+      try { state.user = await api('/auth/me'); } catch (e) { state.token = null; localStorage.removeItem('cee_token'); }
+    }
+
+    function renderLogin(app) {
+      app.innerHTML = `
+        <div class="container">
+          <div class="card login-box">
+            <h1 style="text-align:center;margin-bottom:20px">🎓 CEE Nepal Exam Portal</h1>
+            <div id="login-alert"></div>
+            <label>Email</label>
+            <input type="email" id="login-email" value="student@cee.edu.np" />
+            <label>Password</label>
+            <input type="password" id="login-password" value="student123" />
+            <button class="btn btn-primary" onclick="doLogin()">Login</button>
+            <div class="auth-hint">
+              <strong>Demo accounts:</strong><br />
+              👨‍🏫 Teacher: teacher@cee.edu.np / teacher123<br />
+              🧑‍🎓 Student: Kusum Lamichhane (student@cee.edu.np / student123)<br />
+              🛡️ Admin: admin@cee.edu.np / admin123
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    window.doLogin = async function () {
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+      try {
+        const data = await api('/auth/login', { method: 'POST', body: JSON.stringify({ email, password }) });
+        state.token = data.token;
+        state.user = data.user;
+        localStorage.setItem('cee_token', data.token);
+        state.view = data.user.role === 'student' ? 'student-dashboard' : 'teacher-dashboard';
+        render();
+      } catch (e) {
+        document.getElementById('login-alert').innerHTML = `<div class="alert alert-error">${e.message}</div>`;
+      }
+    };
+
+    window.logout = function () {
+      state.token = null; state.user = null; localStorage.removeItem('cee_token'); state.view = 'login'; render();
+    };
+
+    function renderNav(extra = '') {
+      return `
+        <div class="nav">
+          <h1>🎓 CEE Nepal Exam Portal</h1>
+          <div style="display:flex;align-items:center;flex-wrap:wrap;gap:8px">
+            <span class="user">👤 ${state.user.full_name} (${state.user.role})</span>
+            ${extra}
+            <button onclick="logout()">Logout</button>
+          </div>
+        </div>
+      `;
+    }
+
+    // ===== Student Dashboard =====
+    async function renderStudentDashboard(app) {
+      app.innerHTML = renderNav() + `<div class="container"><div id="student-content"><div class="card">Loading...</div></div></div>`;
+      try {
+        const [sets, attempts] = await Promise.all([api('/student/sets'), api('/student/attempts')]);
+        const content = document.getElementById('student-content');
+        const released = sets.filter(s => s.status === 'released');
+        const availableRows = released.length
+          ? released.map(s => `
+            <tr>
+              <td>${s.title}<br><span class="syllabus-tag">${SYLLABUS_LABELS[s.syllabus] || s.syllabus}</span></td>
+              <td><span class="badge badge-released">Released</span></td>
+              <td>${s.total_marks}</td>
+              <td>${s.attempted
+                ? '<span class="badge badge-blue">Attempted</span>'
+                : `<button class="btn btn-primary btn-sm" onclick="startAttempt(${s.id})">Take Exam</button>`}</td>
+            </tr>
+          `).join('')
+          : '<tr><td colspan="4" class="muted">No exams released yet. Please check back later.</td></tr>';
+
+        const releasedResults = attempts.filter(a => a.result_status === 'released');
+        const pendingResults = attempts.filter(a => a.result_status === 'pending');
+        const noResult = attempts.filter(a => !a.result_status);
+
+        const resultRows = releasedResults.length
+          ? releasedResults.map(a => `
+            <tr>
+              <td>${a.set_title}<br><span class="syllabus-tag">${SYLLABUS_LABELS[a.syllabus] || a.syllabus}</span></td>
+              <td><strong>${a.total_marks} / 200</strong></td>
+              <td><span class="badge badge-released">Released</span></td>
+              <td><button class="btn btn-primary btn-sm" onclick="viewResult(${a.id})">View</button></td>
+            </tr>
+          `).join('')
+          : '<tr><td colspan="4" class="muted">No released results yet.</td></tr>';
+
+        content.innerHTML = `
+          <div class="card">
+            <h2>👋 Welcome, ${state.user.full_name}!</h2>
+            <p class="muted">Prepare for your CEE entrance exam with released mock sets.</p>
+          </div>
+          <div class="card">
+            <h2>📋 Available Exams</h2>
+            <table>
+              <thead><tr><th>Exam</th><th>Status</th><th>Marks</th><th>Action</th></tr></thead>
+              <tbody>${availableRows}</tbody>
+            </table>
+          </div>
+          <div class="card">
+            <h2>📊 My Results</h2>
+            <table>
+              <thead><tr><th>Exam</th><th>Score</th><th>Status</th><th>Action</th></tr></thead>
+              <tbody>${resultRows}</tbody>
+            </table>
+          </div>
+          ${pendingResults.length ? `
+          <div class="card">
+            <h2>⏳ Pending Results</h2>
+            <div class="alert alert-info">
+              ${pendingResults.map(a => `<div>• <strong>${a.set_title}</strong> — submitted, awaiting teacher review.</div>`).join('')}
+            </div>
+          </div>` : ''}
+          ${noResult.length ? `
+          <div class="card">
+            <h2>📝 In Progress</h2>
+            ${noResult.map(a => `<div class="alert alert-info">• <strong>${a.set_title}</strong> — started but not yet submitted.</div>`).join('')}
+          </div>` : ''}
+        `;
+      } catch (e) {
+        document.getElementById('student-content').innerHTML = `<div class="alert alert-error">${e.message}</div>`;
+      }
+    }
+
+    window.startAttempt = async function (setId) {
+      if (!confirm('Start this exam? The timer will begin immediately.')) return;
+      try {
+        const data = await api('/student/attempts', { method: 'POST', body: JSON.stringify({ question_set_id: setId }) });
+        state.attemptId = data.attempt_id;
+        state.timeLimit = data.time_limit_seconds;
+        state.startTime = Date.now();
+        state.answers = {};
+        state.view = 'attempt';
+        loadAttemptQuestions();
+      } catch (e) { alert(e.message); }
+    };
+
+    async function loadAttemptQuestions() {
+      const app = document.getElementById('app');
+      app.innerHTML = renderNav() + `<div class="container"><div class="card">Loading questions...</div></div>`;
+      try {
+        const questions = await api(`/student/attempts/${state.attemptId}/questions`);
+        state.questions = questions;
+        state.currentQ = 0;
+        renderAttempt(app);
+      } catch (e) { state.view = 'student-dashboard'; alert(e.message); render(); }
+    }
+
+    // ===== Attempt Player =====
+    let timerInterval = null;
+
+    function renderAttempt(app) {
+      if (timerInterval) clearInterval(timerInterval);
+      const q = state.questions[state.currentQ];
+      const answeredCount = Object.keys(state.answers).length;
+      const total = state.questions.length;
+
+      app.innerHTML = `
+        ${renderNav()}
+        <div class="container">
+          <div class="card flex-between" style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px">
+            <div><strong>Q${state.currentQ + 1}/${total}</strong> <span class="muted">• ${q.subject} • ${q.topic}</span></div>
+            <div class="timer">⏱ <span id="timer-display">--:--</span></div>
+          </div>
+          <div class="card">
+            <div class="question-block">
+              <div class="question-text">${q.question_text}</div>
+              ${q.options.map((opt, i) => `
+                <div class="option ${state.answers[q.id] === opt.id ? 'selected' : ''}" onclick="selectAnswer(${q.id}, ${opt.id})" id="opt-${q.id}-${opt.id}">
+                  <span class="option-label">${String.fromCharCode(65 + i)}.</span>
+                  <span>${opt.option_text}</span>
+                </div>
+              `).join('')}
+            </div>
+            <div style="display:flex;justify-content:space-between;gap:8px;margin-top:16px;flex-wrap:wrap">
+              <button class="btn btn-secondary btn-sm" onclick="changeQuestion(-1)" ${state.currentQ === 0 ? 'disabled' : ''}>← Prev</button>
+              ${state.currentQ < total - 1
+                ? `<button class="btn btn-primary btn-sm" onclick="changeQuestion(1)">Next →</button>`
+                : `<button class="btn btn-success btn-sm" onclick="submitAttempt()">Submit Exam</button>`}
+            </div>
+          </div>
+          <div class="card">
+            <div class="flex-between">
+              <h3>Navigator</h3>
+              <span class="muted">${answeredCount}/${total} answered</span>
+            </div>
+            <div class="answer-grid">
+              ${state.questions.map((qq, i) => `
+                <div class="answer-cell ${state.answers[qq.id] ? 'answered' : ''}" onclick="jumpToQuestion(${i})">${i + 1}</div>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+      startTimer();
+      window.scrollTo(0, 0);
+    }
+
+    function startTimer() {
+      const elapsed = Math.floor((Date.now() - state.startTime) / 1000);
+      const remaining = Math.max(0, state.timeLimit - elapsed);
+      const display = document.getElementById('timer-display');
+      const mins = Math.floor(remaining / 60);
+      const secs = remaining % 60;
+      display.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+      if (remaining <= 0) { submitAttempt(); return; }
+      timerInterval = setInterval(() => {
+        const el = document.getElementById('timer-display');
+        if (!el) { clearInterval(timerInterval); return; }
+        const now = Math.floor((Date.now() - state.startTime) / 1000);
+        const rem = Math.max(0, state.timeLimit - now);
+        const m = Math.floor(rem / 60);
+        const s = rem % 60;
+        el.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        if (rem <= 0) { clearInterval(timerInterval); submitAttempt(); }
+      }, 1000);
+    }
+
+    window.selectAnswer = async function (questionId, optionId) {
+      state.answers[questionId] = optionId;
+      try {
+        await api(`/student/attempts/${state.attemptId}/answers/${questionId}`, { method: 'PUT', body: JSON.stringify({ selected_option_id: optionId }) });
+      } catch (e) { /* continue locally */ }
+      document.querySelectorAll(`[id^="opt-${questionId}-"]`).forEach(el => el.classList.remove('selected'));
+      const el = document.getElementById(`opt-${questionId}-${optionId}`);
+      if (el) el.classList.add('selected');
+      const cells = document.querySelectorAll('.answer-cell');
+      const idx = state.questions.findIndex(q => q.id === questionId);
+      if (idx >= 0 && cells[idx]) cells[idx].classList.add('answered');
+      const answeredCount = Object.keys(state.answers).length;
+      const countEl = document.querySelector('.flex-between .muted');
+      if (countEl) countEl.textContent = `${answeredCount}/${state.questions.length} answered`;
+    };
+
+    window.changeQuestion = function (dir) { state.currentQ += dir; renderAttempt(document.getElementById('app')); };
+    window.jumpToQuestion = function (idx) { state.currentQ = idx; renderAttempt(document.getElementById('app')); };
+
+    window.submitAttempt = async function () {
+      if (!confirm('Submit your exam? You cannot change answers after submission.')) return;
+      if (timerInterval) clearInterval(timerInterval);
+      try {
+        const data = await api(`/student/attempts/${state.attemptId}/submit`, { method: 'POST', body: JSON.stringify({}) });
+        state.view = 'student-dashboard';
+        alert(data.message);
+        render();
+      } catch (e) {
+        alert(e.message);
+        if (e.message.includes('already')) { state.view = 'student-dashboard'; render(); }
+      }
+    };
+
+    // ===== Student Result View =====
+    async function viewResult(attemptId) {
+      try {
+        const results = await api('/student/results');
+        const result = results.find(r => r.attempt_id === attemptId);
+        if (!result) { alert('Result not found'); return; }
+        const detail = await api(`/student/results/${result.id}`);
+        state.viewResult = detail;
+        state.view = 'result';
+        render();
+      } catch (e) { alert(e.message); }
+    }
+    window.viewResult = viewResult;
+
+    function renderResult(app) {
+      const r = state.viewResult;
+      app.innerHTML = `
+        ${renderNav(`<button onclick="navigate('student-dashboard')">← Back</button>`)}
+        <div class="container">
+          <div class="card">
+            <h2>📊 ${r.set_title} — Result</h2>
+            <p class="muted">Syllabus: ${SYLLABUS_LABELS[r.syllabus] || r.syllabus}</p>
+            <div class="stat-grid">
+              <div class="stat"><div class="value">${r.total_marks}</div><div class="label">Total / 200</div></div>
+              <div class="stat"><div class="value" style="color:var(--success)">${r.correct_count}</div><div class="label">Correct (+1)</div></div>
+              <div class="stat"><div class="value" style="color:var(--danger)">${r.incorrect_count}</div><div class="label">Incorrect (−0.25)</div></div>
+              <div class="stat"><div class="value" style="color:var(--gray)">${r.unanswered_count}</div><div class="label">Unanswered (0)</div></div>
+            </div>
+            ${r.feedback_enabled
+              ? '<div class="alert alert-success">✅ Detailed feedback enabled — see correct answers and rationales below.</div>'
+              : '<div class="alert alert-info">ℹ️ Feedback disabled. You can see your score and breakdown, but not correct answers.</div>'}
+          </div>
+          <div class="card">
+            <h2>🔍 Answer Review</h2>
+            ${r.answers.map((a, i) => `
+              <div class="question-block">
+                <div class="flex-between">
+                  <div class="question-text">${i + 1}. ${a.question_text}</div>
+                  <div>
+                    ${a.is_correct
+                      ? `<span class="badge badge-released">✓ +${a.marks_awarded}</span>`
+                      : a.selected_option_id === null
+                        ? `<span class="badge badge-archived">✗ 0</span>`
+                        : `<span class="badge badge-pending">✗ ${a.marks_awarded}</span>`}
+                  </div>
+                </div>
+                ${r.feedback_enabled ? `
+                  <div style="margin-top:8px;font-size:0.85rem">
+                    <div>Your answer: <strong>${a.selected_label || '—'}</strong></div>
+                    <div>Correct: <strong>${a.correct_label || '—'}</strong></div>
+                    ${a.rationale ? `<div class="muted mt-16" style="background:var(--light);padding:10px;border-radius:6px;margin-top:8px">💡 <strong>Rationale:</strong> ${a.rationale}</div>` : ''}
+                  </div>
+                ` : ''}
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    // ===== Teacher Dashboard =====
+    async function renderTeacherDashboard(app) {
+      app.innerHTML = renderNav() + `<div class="container"><div id="teacher-content"><div class="card">Loading...</div></div></div>`;
+      try {
+        const [sets, results] = await Promise.all([api('/question-sets'), api('/teacher/results')]);
+        const content = document.getElementById('teacher-content');
+        const pending = results.filter(r => r.status === 'pending');
+        const released = results.filter(r => r.status === 'released');
+
+        content.innerHTML = `
+          <div class="row">
+            <div class="col">
+              <div class="card">
+                <div class="flex-between mb-8">
+                  <h2>📚 Question Sets (${sets.length})</h2>
+                  <button class="btn btn-primary btn-sm" onclick="showCreateSetForm()">+ New</button>
+                </div>
+                <div id="create-set-form"></div>
+                <table>
+                  <thead><tr><th>Title</th><th>Status</th><th>Q</th><th>Actions</th></tr></thead>
+                  <tbody>
+                    ${sets.map(s => `
+                      <tr>
+                        <td>${s.title}<br><span class="syllabus-tag">${SYLLABUS_LABELS[s.syllabus] || s.syllabus}</span></td>
+                        <td><span class="badge badge-${s.status}">${s.status}</span></td>
+                        <td>${s.question_count || '—'}</td>
+                        <td>
+                          <button class="btn btn-secondary btn-sm" onclick="viewSet(${s.id})">View</button>
+                          ${s.status === 'draft' ? `<button class="btn btn-success btn-sm" onclick="releaseSet(${s.id})">Release</button>` : ''}
+                          ${s.status === 'released' ? `<button class="btn btn-warning btn-sm" onclick="unreleaseSet(${s.id})">Unrelease</button>` : ''}
+                        </td>
+                      </tr>
+                    `).join('') || '<tr><td colspan="4" class="muted">No question sets yet.</td></tr>'}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <h2>🕐 Pending Review</h2>
+                ${pending.length
+                  ? `<table>
+                      <thead><tr><th>Student</th><th>Exam</th><th>Score</th><th>Action</th></tr></thead>
+                      <tbody>
+                        ${pending.map(r => `
+                          <tr>
+                            <td>${r.student_name}</td>
+                            <td>${r.set_title}</td>
+                            <td><strong>${r.total_marks}</strong></td>
+                            <td><button class="btn btn-primary btn-sm" onclick="openReview(${r.id})">Review</button></td>
+                          </tr>
+                        `).join('')}
+                      </tbody>
+                    </table>`
+                  : '<div class="muted">No pending results.</div>'}
+              </div>
+              <div class="card">
+                <h2>✅ Released Results</h2>
+                ${released.length
+                  ? `<table>
+                      <thead><tr><th>Student</th><th>Exam</th><th>Score</th><th>Feedback</th></tr></thead>
+                      <tbody>
+                        ${released.map(r => `
+                          <tr>
+                            <td>${r.student_name}</td>
+                            <td>${r.set_title}</td>
+                            <td>${r.total_marks}</td>
+                            <td>${r.feedback_enabled ? '<span class="badge badge-released">On</span>' : '<span class="badge badge-archived">Off</span>'}</td>
+                          </tr>
+                        `).join('')}
+                      </tbody>
+                    </table>`
+                  : '<div class="muted">No released results yet.</div>'}
+              </div>
+            </div>
+          </div>
+        `;
+      } catch (e) {
+        document.getElementById('teacher-content').innerHTML = `<div class="alert alert-error">${e.message}</div>`;
+      }
+    }
+
+    window.showCreateSetForm = function () {
+      const form = document.getElementById('create-set-form');
+      form.innerHTML = `
+        <div style="background:var(--light);padding:16px;border-radius:8px;margin-bottom:16px">
+          <label>Title</label>
+          <input id="new-set-title" placeholder="CEE Mock Set" />
+          <label>Syllabus</label>
+          <select id="new-set-syllabus">
+            <option value="ce_2025">CEE 2025 (MBBS/BDS/Nursing)</option>
+            <option value="ce_2026">CEE 2026 (BAMS/MLT/BPT)</option>
+            <option value="bph">BPH</option>
+            <option value="bns">BNS</option>
+          </select>
+          <label>Duration (minutes)</label>
+          <input id="new-set-duration" type="number" value="180" />
+          <button class="btn btn-success btn-sm" onclick="createSet()">Create</button>
+          <button class="btn btn-secondary btn-sm" onclick="document.getElementById('create-set-form').innerHTML=''">Cancel</button>
+        </div>
+      `;
+    };
+
+    window.createSet = async function () {
+      const title = document.getElementById('new-set-title').value;
+      if (!title) { alert('Title required'); return; }
+      const syllabus = document.getElementById('new-set-syllabus').value;
+      const duration = parseInt(document.getElementById('new-set-duration').value) || 180;
+      try {
+        await api('/question-sets', { method: 'POST', body: JSON.stringify({ title, syllabus, duration_minutes: duration }) });
+        document.getElementById('create-set-form').innerHTML = '';
+        renderTeacherDashboard(document.getElementById('app'));
+      } catch (e) { alert(e.message); }
+    };
+
+    window.releaseSet = async function (id) {
+      if (!confirm('Release this set to students? It must pass composition validation.')) return;
+      try {
+        await api(`/question-sets/${id}/release`, { method: 'POST' });
+        renderTeacherDashboard(document.getElementById('app'));
+      } catch (e) { alert(e.message); }
+    };
+
+    window.unreleaseSet = async function (id) {
+      if (!confirm('Unrelease this set?')) return;
+      try {
+        await api(`/question-sets/${id}/unrelease`, { method: 'POST' });
+        renderTeacherDashboard(document.getElementById('app'));
+      } catch (e) { alert(e.message); }
+    };
+
+    window.viewSet = async function (id) {
+      try {
+        const set = await api(`/question-sets/${id}`);
+        const comp = set.composition;
+        state.viewSet = set;
+        const app = document.getElementById('app');
+        app.innerHTML = `
+          ${renderNav(`<button onclick="navigate('teacher-dashboard')">← Back</button>`)}
+          <div class="container">
+            <div class="card">
+              <div class="flex-between">
+                <div>
+                  <h2>📚 ${set.title}</h2>
+                  <p class="muted">${set.description || ''}</p>
+                  <p class="muted">Syllabus: <span class="syllabus-tag">${SYLLABUS_LABELS[set.syllabus] || set.syllabus}</span> • Status: <span class="badge badge-${set.status}">${set.status}</span> • ${set.total_marks} marks • ${set.duration_minutes} min</p>
+                </div>
+                <button class="btn btn-primary btn-sm" onclick="checkComposition(${set.id})">Check</button>
+              </div>
+              <div id="comp-result"></div>
+              <h3 style="margin-top:16px">Composition</h3>
+              <div class="stat-grid">
+                <div class="stat"><div class="value">${comp.biology}</div><div class="label">Biology</div></div>
+                <div class="stat"><div class="value">${comp.chemistry}</div><div class="label">Chemistry</div></div>
+                <div class="stat"><div class="value">${comp.physics}</div><div class="label">Physics</div></div>
+                <div class="stat"><div class="value">${comp.mental_agility}</div><div class="label">MAT</div></div>
+                <div class="stat"><div class="value">${comp.recall}</div><div class="label">Recall</div></div>
+                <div class="stat"><div class="value">${comp.understanding}</div><div class="label">Understanding</div></div>
+                <div class="stat"><div class="value">${comp.application}</div><div class="label">Application</div></div>
+                <div class="stat"><div class="value">${comp.total}/${comp.count}</div><div class="label">Marks/Q</div></div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="flex-between mb-8">
+                <h2>❓ Questions (${set.questions.length})</h2>
+                <button class="btn btn-primary btn-sm" onclick="showAddQuestionForm(${set.id})">+ Add</button>
+              </div>
+              <div id="add-question-form"></div>
+              ${set.questions.map((q, i) => `
+                <div class="question-block">
+                  <div class="flex-between">
+                    <div class="question-text">${i + 1}. ${q.question_text}</div>
+                    <div style="display:flex;gap:6px;flex-wrap:wrap">
+                      <span class="badge badge-blue">${q.subject}</span>
+                      <span class="badge badge-draft">${q.cognitive_level}</span>
+                    </div>
+                  </div>
+                  <div class="muted" style="margin:6px 0">Topic: ${q.topic} • ${q.sub_topic || ''}</div>
+                  ${q.options.map(o => `
+                    <div class="option ${o.is_correct ? 'correct' : ''}" style="cursor:default;pointer-events:none">
+                      <span class="option-label">${o.option_label}.</span>
+                      <span>${o.option_text} ${o.is_correct ? '✓' : ''}</span>
+                    </div>
+                  `).join('')}
+                </div>
+              `).join('') || '<div class="muted">No questions in this set yet.</div>'}
+            </div>
+          </div>
+        `;
+      } catch (e) { alert(e.message); }
+    };
+
+    window.showAddQuestionForm = function (setId) {
+      const form = document.getElementById('add-question-form');
+      form.innerHTML = `
+        <div style="background:var(--light);padding:16px;border-radius:8px;margin-bottom:16px">
+          <div class="row">
+            <div class="col">
+              <label>Subject</label>
+              <select id="q-subject">
+                <option value="biology">Biology</option>
+                <option value="chemistry">Chemistry</option>
+                <option value="physics">Physics</option>
+                <option value="mental_agility">Mental Agility</option>
+              </select>
+            </div>
+            <div class="col">
+              <label>Topic</label>
+              <input id="q-topic" placeholder="e.g. Human Biology" />
+            </div>
+            <div class="col">
+              <label>Cognitive Level</label>
+              <select id="q-cognitive">
+                <option value="recall">Recall</option>
+                <option value="understanding">Understanding</option>
+                <option value="application">Application</option>
+              </select>
+            </div>
+          </div>
+          <label>Question Text</label>
+          <textarea id="q-text" rows="2" placeholder="Enter the question..."></textarea>
+          <label>Rationale</label>
+          <textarea id="q-rationale" rows="2" placeholder="Explanation..."></textarea>
+          <label>Options (check correct)</label>
+          <div id="q-options">
+            ${['A', 'B', 'C', 'D'].map((lbl, i) => `
+              <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
+                <span><strong>${lbl}.</strong></span>
+                <input type="text" class="q-opt-text" placeholder="Option ${lbl}" style="margin-bottom:0" />
+                <input type="radio" name="correct-option" value="${i}" />
+              </div>
+            `).join('')}
+          </div>
+          <button class="btn btn-success btn-sm" onclick="addQuestion(${setId})">Add</button>
+          <button class="btn btn-secondary btn-sm" onclick="document.getElementById('add-question-form').innerHTML=''">Cancel</button>
+        </div>
+      `;
+    };
+
+    window.addQuestion = async function (setId) {
+      const subject = document.getElementById('q-subject').value;
+      const topic = document.getElementById('q-topic').value;
+      const cognitive = document.getElementById('q-cognitive').value;
+      const text = document.getElementById('q-text').value;
+      const rationale = document.getElementById('q-rationale').value;
+      const optInputs = document.querySelectorAll('.q-opt-text');
+      const correctIdx = parseInt(document.querySelector('input[name="correct-option"]:checked')?.value ?? -1);
+      if (!topic || !text || correctIdx < 0) { alert('Topic, question text, and a correct option are required.'); return; }
+      const options = Array.from(optInputs).map((inp, i) => ({
+        option_label: String.fromCharCode(65 + i),
+        option_text: inp.value,
+        is_correct: i === correctIdx,
+        sort_order: i + 1
+      }));
+      if (options.some(o => !o.option_text)) { alert('All options must have text.'); return; }
+      try {
+        await api(`/question-sets/${setId}/questions`, {
+          method: 'POST',
+          body: JSON.stringify({ subject, topic, cognitive_level: cognitive, question_text: text, rationale: rationale || null, options })
+        });
+        viewSet(setId);
+      } catch (e) { alert(e.message); }
+    };
+
+    window.checkComposition = async function (id) {
+      const comp = await api(`/question-sets/${id}/composition`);
+      const el = document.getElementById('comp-result');
+      el.innerHTML = comp.valid
+        ? `<div class="comp-status comp-ok">✅ Set is valid — matches syllabus weightage.</div>`
+        : `<div class="comp-status comp-fail">❌ Set is invalid:<br>${comp.errors.map(e => '• ' + e).join('<br>')}</div>`;
+    };
+
+    // ===== Result Review (Teacher) =====
+    window.openReview = async function (resultId) {
+      try {
+        const detail = await api(`/teacher/results/${resultId}`);
+        const app = document.getElementById('app');
+        app.innerHTML = `
+          ${renderNav(`<button onclick="navigate('teacher-dashboard')">← Back</button>`)}
+          <div class="container">
+            <div class="card">
+              <h2>🔍 Review — ${detail.student_name}</h2>
+              <p class="muted">${detail.set_title} • ${SYLLABUS_LABELS[detail.syllabus] || detail.syllabus}</p>
+              <div class="stat-grid">
+                <div class="stat"><div class="value">${detail.total_marks}</div><div class="label">Total</div></div>
+                <div class="stat"><div class="value" style="color:var(--success)">${detail.correct_count}</div><div class="label">Correct</div></div>
+                <div class="stat"><div class="value" style="color:var(--danger)">${detail.incorrect_count}</div><div class="label">Incorrect</div></div>
+                <div class="stat"><div class="value" style="color:var(--gray)">${detail.unanswered_count}</div><div class="label">Unanswered</div></div>
+              </div>
+              <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+                <label style="margin:0"><input type="checkbox" id="feedback-toggle" /> Enable feedback</label>
+                <button class="btn btn-success" onclick="releaseResult(${detail.id})">Release Result</button>
+              </div>
+            </div>
+            <div class="card">
+              <h2>📝 Answer Sheet</h2>
+              ${detail.answers.map((a, i) => `
+                <div class="question-block">
+                  <div class="flex-between">
+                    <div class="question-text">${i + 1}. ${a.question_text}</div>
+                    <div>${a.is_correct ? '<span class="badge badge-released">✓</span>' : '<span class="badge badge-pending">✗</span>'}</div>
+                  </div>
+                  <div class="muted" style="margin-top:6px">
+                    Student: <strong>${a.selected_label || '—'}</strong> | Correct: <strong>${a.correct_label}</strong> | Marks: ${a.marks_awarded}
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      } catch (e) { alert(e.message); }
+    };
+
+    window.releaseResult = async function (id) {
+      const feedback = document.getElementById('feedback-toggle').checked;
+      if (!confirm('Release this result to the student?')) return;
+      try {
+        await api(`/teacher/results/${id}/release`, { method: 'PATCH', body: JSON.stringify({ feedback_enabled: feedback }) });
+        alert('Result released to student.');
+        renderTeacherDashboard(document.getElementById('app'));
+      } catch (e) { alert(e.message); }
+    };
+
+    // ===== Admin Dashboard =====
+    async function renderAdminDashboard(app) {
+      app.innerHTML = renderNav() + `<div class="container"><div id="admin-content"><div class="card">Loading...</div></div></div>`;
+      try {
+        const [stats, logs] = await Promise.all([api('/admin/stats'), api('/audit-logs')]);
+        const content = document.getElementById('admin-content');
+        content.innerHTML = `
+          <div class="card">
+            <h2>📊 Platform Statistics</h2>
+            <div class="stat-grid">
+              <div class="stat"><div class="value">${stats.users}</div><div class="label">Users</div></div>
+              <div class="stat"><div class="value">${stats.students}</div><div class="label">Students</div></div>
+              <div class="stat"><div class="value">${stats.teachers}</div><div class="label">Teachers</div></div>
+              <div class="stat"><div class="value">${stats.sets}</div><div class="label">Sets</div></div>
+              <div class="stat"><div class="value">${stats.released_sets}</div><div class="label">Released</div></div>
+              <div class="stat"><div class="value">${stats.attempts}</div><div class="label">Attempts</div></div>
+              <div class="stat"><div class="value">${stats.pending_results}</div><div class="label">Pending</div></div>
+              <div class="stat"><div class="value">${stats.released_results}</div><div class="label">Released Results</div></div>
+            </div>
+          </div>
+          <div class="card">
+            <h2>📜 Audit Log</h2>
+            <table>
+              <thead><tr><th>Time</th><th>Actor</th><th>Action</th><th>Entity</th></tr></thead>
+              <tbody>
+                ${logs.slice(0, 50).map(l => `
+                  <tr>
+                    <td class="muted">${l.created_at}</td>
+                    <td>${l.actor_id}</td>
+                    <td><span class="badge badge-blue">${l.action}</span></td>
+                    <td>${l.entity_type} #${l.entity_id || '—'}</td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          </div>
+        `;
+      } catch (e) {
+        document.getElementById('admin-content').innerHTML = `<div class="alert alert-error">${e.message}</div>`;
+      }
+    }
+
+    // ===== Init =====
+    render();
+  </script>
+</body>
+</html>
