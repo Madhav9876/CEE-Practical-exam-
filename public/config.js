@@ -12,5 +12,5 @@
  * The trailing /api/v1 is appended automatically.
  */
 window.__CEE_CONFIG__ = {
-  apiBaseUrl: ''
+  apiBaseUrl: 'https://cee-practical-exam.onrender.com'
 };
