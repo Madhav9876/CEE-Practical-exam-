@@ -1,25 +1,30 @@
 const bcrypt = require('bcryptjs');
-const db = require('./db');
+const db = process.env.DATABASE_URL ? require('./db-postgres') : require('./db');
 const { qBank } = require('./questionBank');
 
-// Clear existing data
-db.exec(`
-  DELETE FROM audit_logs;
-  DELETE FROM results;
-  DELETE FROM attempt_answers;
-  DELETE FROM attempts;
-  DELETE FROM question_options;
-  DELETE FROM questions;
-  DELETE FROM question_sets;
-  DELETE FROM users;
-`);
+async function main() {
+await db.init();
+
+// Clear existing data (order respects foreign keys)
+for (const table of ['audit_logs', 'results', 'attempt_answers', 'attempts', 'question_options', 'questions', 'question_sets', 'users']) {
+  await db.exec(`DELETE FROM ${table};`);
+}
+
+// Reset identity sequences so ids start at 1 on both engines.
+if (db.dialect === 'postgres') {
+  for (const table of ['users', 'question_sets', 'questions', 'question_options', 'attempts', 'attempt_answers', 'results', 'audit_logs']) {
+    await db.exec(`ALTER SEQUENCE ${table}_id_seq RESTART WITH 1;`);
+  }
+} else {
+  await db.exec("DELETE FROM sqlite_sequence WHERE name IN ('users','question_sets','questions','question_options','attempts','attempt_answers','results','audit_logs');");
+}
 
 // ---------- Users ----------
-const teacher = db.prepare('INSERT INTO users (email, password_hash, full_name, role) VALUES (?,?,?,?)')
+const teacher = await db.prepare('INSERT INTO users (email, password_hash, full_name, role) VALUES (?,?,?,?)')
   .run('teacher@cee.edu.np', bcrypt.hashSync('teacher123', 10), 'Prof. Hari Sharma', 'teacher');
-const student = db.prepare('INSERT INTO users (email, password_hash, full_name, role) VALUES (?,?,?,?)')
+const student = await db.prepare('INSERT INTO users (email, password_hash, full_name, role) VALUES (?,?,?,?)')
   .run('student@cee.edu.np', bcrypt.hashSync('student123', 10), 'Kusum Lamichhane', 'student');
-const admin = db.prepare('INSERT INTO users (email, password_hash, full_name, role) VALUES (?,?,?,?)')
+const admin = await db.prepare('INSERT INTO users (email, password_hash, full_name, role) VALUES (?,?,?,?)')
   .run('admin@cee.edu.np', bcrypt.hashSync('admin123', 10), 'Admin User', 'admin');
 
 console.log('Users created:');
@@ -217,6 +222,9 @@ const insertOption = db.prepare(`
 
 const labels = ['A', 'B', 'C', 'D'];
 
+/** Postgres BOOLEAN columns need real booleans; SQLite uses 0/1. */
+const toBool = (v) => (db.dialect === 'postgres' ? !!v : (v ? 1 : 0));
+
 // Cognitive distribution per set: 100 recall, 60 understanding, 40 application
 const COGNITIVE_PATTERN = [];
 for (let i = 0; i < 100; i++) COGNITIVE_PATTERN.push('recall');
@@ -225,32 +233,32 @@ for (let i = 0; i < 40; i++) COGNITIVE_PATTERN.push('application');
 
 let cognitiveCounter = 0;
 
-function addQuestion(setId, subject, q, topic, subTopic) {
+async function addQuestion(setId, subject, q, topic, subTopic) {
   const level = COGNITIVE_PATTERN[cognitiveCounter % COGNITIVE_PATTERN.length];
   cognitiveCounter++;
-  const info = insertQuestion.run(setId, subject, topic, subTopic, level, 1.00, 0.25, q.text, q.rationale);
-  q.options.forEach((opt, oi) => {
-    insertOption.run(info.lastInsertRowid, labels[oi], opt, oi === q.correct ? 1 : 0, oi + 1);
-  });
+  const info = await insertQuestion.run(setId, subject, topic, subTopic, level, 1.00, 0.25, q.text, q.rationale);
+  for (let oi = 0; oi < q.options.length; oi++) {
+    await insertOption.run(info.lastInsertRowid, labels[oi], q.options[oi], toBool(oi === q.correct), oi + 1);
+  }
 }
 
 // ---------- Build a full 200-mark set for a syllabus ----------
-function buildFullSet(syllabusKey, setNumber) {
+async function buildFullSet(syllabusKey, setNumber) {
   const syl = SYLLABI[syllabusKey];
   const seed = setNumber * 100 + syllabusKey.length;
   const title = `${syl.label} — Mock Set ${String(setNumber).padStart(2, '0')}`;
-  const setInfo = insertSet.run(title, `Full 200-mark mock exam aligned to ${syl.label}.`, syllabusKey, 'full', 200, 180, 'draft', teacher.lastInsertRowid);
+  const setInfo = await insertSet.run(title, `Full 200-mark mock exam aligned to ${syl.label}.`, syllabusKey, 'full', 200, 180, 'draft', teacher.lastInsertRowid);
   const setId = setInfo.lastInsertRowid;
 
   // Biology (Zoology + Botany)
   if (syl.biology) {
     for (const z of syl.biology.zoology) {
       const qs = pickQuestions(bank.biology.filter(q => q.subTopic === 'Zoology'), z.marks, seed + z.marks);
-      qs.forEach(q => addQuestion(setId, 'biology', q, z.chapter, 'Zoology'));
+      for (const q of qs) await addQuestion(setId, 'biology', q, z.chapter, 'Zoology');
     }
     for (const b of syl.biology.botany) {
       const qs = pickQuestions(bank.biology.filter(q => q.subTopic === 'Botany'), b.marks, seed + b.marks * 2);
-      qs.forEach(q => addQuestion(setId, 'biology', q, b.chapter, 'Botany'));
+      for (const q of qs) await addQuestion(setId, 'biology', q, b.chapter, 'Botany');
     }
   }
 
@@ -258,7 +266,7 @@ function buildFullSet(syllabusKey, setNumber) {
   if (syl.chemistry) {
     for (const c of syl.chemistry) {
       const qs = pickQuestions(bank.chemistry, c.marks, seed + c.marks * 3);
-      qs.forEach(q => addQuestion(setId, 'chemistry', q, c.chapter, q.subTopic));
+      for (const q of qs) await addQuestion(setId, 'chemistry', q, c.chapter, q.subTopic);
     }
   }
 
@@ -266,7 +274,7 @@ function buildFullSet(syllabusKey, setNumber) {
   if (syl.physics) {
     for (const p of syl.physics) {
       const qs = pickQuestions(bank.physics, p.marks, seed + p.marks * 4);
-      qs.forEach(q => addQuestion(setId, 'physics', q, p.chapter, q.subTopic));
+      for (const q of qs) await addQuestion(setId, 'physics', q, p.chapter, q.subTopic);
     }
   }
 
@@ -274,22 +282,22 @@ function buildFullSet(syllabusKey, setNumber) {
   if (syl.mat) {
     for (const m of syl.mat) {
       const qs = pickQuestions(bank.mental_agility, m.marks, seed + m.marks * 5);
-      qs.forEach(q => addQuestion(setId, 'mental_agility', q, m.chapter, q.subTopic));
+      for (const q of qs) await addQuestion(setId, 'mental_agility', q, m.chapter, q.subTopic);
     }
   }
 
   // PCL / Health / Nursing
   if (syl.pcl) {
     const qs = pickQuestions([...bank.chemistry, ...bank.physics], 20, seed + 999);
-    qs.forEach(q => addQuestion(setId, 'pcl', q, 'PCL Level Contents', 'PCL'));
+    for (const q of qs) await addQuestion(setId, 'pcl', q, 'PCL Level Contents', 'PCL');
   }
   if (syl.health) {
     const qs = pickQuestions([...bank.biology, ...bank.chemistry], 20, seed + 888);
-    qs.forEach(q => addQuestion(setId, 'health', q, 'Pre-requisite Health Knowledge', 'Health'));
+    for (const q of qs) await addQuestion(setId, 'health', q, 'Pre-requisite Health Knowledge', 'Health');
   }
   if (syl.nursing) {
     const qs = pickQuestions([...bank.biology, ...bank.chemistry, ...bank.physics], 180, seed + 777);
-    qs.forEach(q => addQuestion(setId, 'health', q, 'Nursing Core', 'Nursing'));
+    for (const q of qs) await addQuestion(setId, 'health', q, 'Nursing Core', 'Nursing');
   }
 
   return setId;
@@ -302,7 +310,7 @@ const createdSets = [];
 
 for (const sylKey of ['ce_2025', 'ce_2026', 'bph', 'bns']) {
   for (let i = 1; i <= 12; i++) {
-    const id = buildFullSet(sylKey, i);
+    const id = await buildFullSet(sylKey, i);
     createdSets.push({ id, syllabus: sylKey, number: i });
     setCount++;
   }
@@ -325,17 +333,26 @@ for (const [k, v] of Object.entries(summaryBySyllabus)) {
 console.log('\n=== Composition Verification (first set of each syllabus) ===');
 for (const sylKey of ['ce_2025', 'ce_2026', 'bph', 'bns']) {
   const first = createdSets.find(s => s.syllabus === sylKey);
-  const comp = db.prepare(`
+  const comp = await db.prepare(`
     SELECT subject, SUM(marks) as marks, COUNT(*) as count
-    FROM questions WHERE question_set_id = ? AND is_active = 1
+    FROM questions WHERE question_set_id = ? AND is_active = ${db.dialect === 'postgres' ? 'TRUE' : '1'}
     GROUP BY subject
   `).all(first.id);
-  const total = comp.reduce((acc, r) => acc + r.marks, 0);
-  const count = comp.reduce((acc, r) => acc + r.count, 0);
+  const total = comp.reduce((acc, r) => acc + Number(r.marks), 0);
+  const count = comp.reduce((acc, r) => acc + Number(r.count), 0);
   console.log(`  ${SYLLABI[sylKey].label}:`);
-  for (const c of comp) console.log(`    ${c.subject}: ${c.marks} marks (${c.count} Q)`);
+  for (const c of comp) console.log(`    ${c.subject}: ${Number(c.marks)} marks (${Number(c.count)} Q)`);
   console.log(`    TOTAL: ${total} marks, ${count} questions`);
 }
 
 console.log('\nSeed complete. Run `npm start` to launch the portal.');
 console.log('All 48 question sets are in DRAFT state — teachers can release them selectively.');
+}
+
+main()
+  .then(async () => { await db.close(); process.exit(0); })
+  .catch(async (e) => {
+    console.error('\nSeed failed:', e.message);
+    try { await db.close(); } catch {}
+    process.exit(1);
+  });

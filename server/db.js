@@ -1,4 +1,12 @@
-const Database = require('better-sqlite3');
+let Database;
+try {
+  Database = require('better-sqlite3');
+} catch (e) {
+  throw new Error(
+    'better-sqlite3 is not installed, so the local SQLite database cannot be opened.\n' +
+    'Either run `npm install` to add it, or set DATABASE_URL to use PostgreSQL/Supabase instead.'
+  );
+}
 const path = require('path');
 const fs = require('fs');
 
@@ -7,7 +15,7 @@ if (!fs.existsSync(dataDir)) {
   fs.mkdirSync(dataDir, { recursive: true });
 }
 
-const db = new Database(path.join(dataDir, 'cee.db'));
+const db = new Database(process.env.SQLITE_PATH || path.join(dataDir, 'cee.db'));
 db.pragma('journal_mode = WAL');
 db.pragma('foreign_keys = ON');
 
@@ -111,4 +119,42 @@ CREATE TABLE IF NOT EXISTS audit_logs (
 );
 `);
 
-module.exports = db;
+/**
+ * Async facade over better-sqlite3.
+ *
+ * better-sqlite3 is synchronous, but the PostgreSQL driver cannot be. Exposing
+ * the same Promise-based surface from both engines lets server/index.js use a
+ * single `await`-based code path regardless of which database is active.
+ * Semantics are unchanged: these calls still execute synchronously underneath.
+ */
+const asyncDb = {
+  dialect: 'sqlite',
+
+  prepare(sql) {
+    const stmt = db.prepare(sql);
+    return {
+      async run(...params) {
+        return stmt.run(...params);
+      },
+      async get(...params) {
+        return stmt.get(...params);
+      },
+      async all(...params) {
+        return stmt.all(...params);
+      },
+    };
+  },
+
+  async exec(sql) {
+    return db.exec(sql);
+  },
+
+  /** Schema is created at require-time above; nothing further to do. */
+  async init() {},
+
+  async close() {
+    db.close();
+  },
+};
+
+module.exports = asyncDb;

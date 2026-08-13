@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: cee-nepal-backend
+    runtime: node
+    plan: free
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Supabase connection string (Settings -> Database -> Connection string).
+      # Prefer the pooled connection (port 6543) for serverless-style workloads.
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      # Comma-separated list of allowed frontend origins (your Vercel URL).
+      - key: CORS_ORIGIN
+        sync: false
