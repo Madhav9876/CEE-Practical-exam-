@@ -1,42 +1,40 @@
-# CEE Nepal Examination Portal — Technical Blueprint
+# Documentation — Technical Blueprint
 
-A comprehensive system design and implementation plan for a secure, syllabus-aligned Common Entrance Examination (CEE) portal for Nepal.
+This folder contains design documents, schema definitions, and implementation notes for the CEE Nepal Examination Portal.
 
-## Exam Specifications Enforced
+## Core Exam Specifications
 
-| Specification | Value |
-|---|---|
-| Total Marks | 200 |
-| Question Format | Single-best-answer MCQs |
-| Total Questions | 200 |
-| Scoring | +1 correct, −0.25 incorrect, 0 unanswered |
-| Question Sets | ≥ 45 unique sets |
-| Subjects | Biology (80), Chemistry (50), Physics (50), Mental Agility (20) |
-| Cognitive Levels | 50% Recall, 30% Understanding, 20% Application |
-
-## Subject Weightage Breakdown
-
-| Subject | Marks | Sub-topics |
-|---|---|---|
-| **Biology** | 80 | Zoology (40), Botany (40) |
-| **Chemistry** | 50 | Physical, Inorganic, Organic, Applied/Analytical |
-| **Physics** | 50 | Mechanics, Heat/Thermodynamics, Waves/Optics, Electricity/Magnetism, Electrostatics, Modern Physics |
-| **Mental Agility Test** | 20 | Verbal, Numerical, Logical, Spatial/Abstract reasoning |
+- Total marks: 200
+- Format: Single-best-answer multiple‑choice questions (MCQ)
+- Total questions: 200
+- Scoring: +1 for a correct answer, −0.25 for an incorrect answer, 0 for unanswered
+- Minimum number of unique question sets: 45
+- Subject distribution:
+  - Biology: 80 marks (Zoology 40, Botany 40)
+  - Chemistry: 50 marks
+  - Physics: 50 marks
+  - Mental Agility: 20 marks (verbal, numerical, logical, spatial)
+- Cognitive level distribution: 50% Recall, 30% Understanding, 20% Application
 
 ## Document Index
 
-1. [System Architecture](01-system-architecture.md) — Tech stack & high-level design
-2. [Database Schema](02-database-schema.md) — Relational schema & DDL
-3. [Exam Workflow](03-workflow.md) — Lifecycle from creation to result release
-4. [API Endpoint Design](04-api-endpoints.md) — RESTful endpoints
-5. [Security Recommendations](05-security.md) — Anti-cheating & integrity controls
-6. [Technical Roadmap](06-technical-roadmap.md) — Mobile-first development plan
-7. [Content Categorization Plan](07-content-categorization-plan.md) — Syllabus-to-questions mapping
+1. System Architecture — 01-system-architecture.md
+2. Database Schema — 02-database-schema.md
+3. Exam Workflow — 03-workflow.md
+4. API Endpoint Design — 04-api-endpoints.md
+5. Security & Anti-cheating — 05-security.md
+6. Technical Roadmap — 06-technical-roadmap.md
+7. Content Categorization Plan — 07-content-categorization-plan.md
 
-## Core Business Rules
+## Business Rules and Workflow
 
-- **Dual-role system:** Teacher/Admin and Student.
-- **Question sets** are created by teachers and must be explicitly **released** before students can see them.
-- **Results** are held in a **Pending** state after submission; a teacher must review and **release** them.
-- **Feedback** (correct answers + rationales) is shown to students **only after** result release, and only if the teacher enabled it.
-- **Scoring** is computed server-side to prevent tampering.
+- Roles: Admin, Teacher, Student; role-based access enforces what each user can see and perform.
+- Teachers create question sets; sets must be explicitly released before becoming visible to students.
+- Student attempts are recorded as attempts and stored with full audit metadata.
+- Results are set to a Pending state after submission; teachers review and release results.
+- Feedback and rationales are shown to students only after results are released and if enabled per set.
+- Scoring is performed and persisted server-side to prevent client tampering.
+
+## References
+
+See the other files in this directory for architecture diagrams, database DDL, API specs, and deployment notes.
