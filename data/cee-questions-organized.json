@@ -1,0 +1,4395 @@
+{
+  "generatedAt": "2026-08-14T11:05:22.294Z",
+  "description": "CEE question sets reorganized: difficulty-balanced, intra- and inter-set unique.",
+  "sets": {
+    "zoology": {
+      "label": "Zoology",
+      "balance": {
+        "Easy": 12,
+        "Medium": 8,
+        "Hard": 4,
+        "total": 24
+      },
+      "questions": [
+        {
+          "id": "zoology-1",
+          "topic": "Evolutionary Biology",
+          "subTopic": "Zoology",
+          "difficulty": "Easy",
+          "text": "Which theory of origin of life was experimentally supported by Miller and Urey?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Oparin-Haldane theory"
+            },
+            {
+              "label": "B",
+              "text": "Theory of spontaneous generation"
+            },
+            {
+              "label": "C",
+              "text": "Theory of special creation"
+            },
+            {
+              "label": "D",
+              "text": "Panspermia theory"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Oparin-Haldane theory",
+          "rationale": "Miller-Urey experiment supported the Oparin-Haldane theory of chemical evolution."
+        },
+        {
+          "id": "zoology-2",
+          "topic": "Evolutionary Biology",
+          "subTopic": "Zoology",
+          "difficulty": "Easy",
+          "text": "Which of the following is a paleontological evidence of evolution?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Fossils"
+            },
+            {
+              "label": "B",
+              "text": "Homologous organs"
+            },
+            {
+              "label": "C",
+              "text": "Vestigial organs"
+            },
+            {
+              "label": "D",
+              "text": "Embryological similarities"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Fossils",
+          "rationale": "Fossils provide direct paleontological evidence of evolution."
+        },
+        {
+          "id": "zoology-3",
+          "topic": "Evolutionary Biology",
+          "subTopic": "Zoology",
+          "difficulty": "Easy",
+          "text": "The theory of natural selection was proposed by:",
+          "options": [
+            {
+              "label": "A",
+              "text": "Charles Darwin"
+            },
+            {
+              "label": "B",
+              "text": "Jean-Baptiste Lamarck"
+            },
+            {
+              "label": "C",
+              "text": "Gregor Mendel"
+            },
+            {
+              "label": "D",
+              "text": "Alfred Wallace"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Charles Darwin",
+          "rationale": "Darwin proposed natural selection in his theory of evolution."
+        },
+        {
+          "id": "zoology-4",
+          "topic": "Evolutionary Biology",
+          "subTopic": "Zoology",
+          "difficulty": "Easy",
+          "text": "Which human ancestor is considered the earliest hominid in the line to modern man?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Ramapithecus"
+            },
+            {
+              "label": "B",
+              "text": "Australopithecus"
+            },
+            {
+              "label": "C",
+              "text": "Homo erectus"
+            },
+            {
+              "label": "D",
+              "text": "Neanderthal man"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Ramapithecus",
+          "rationale": "Ramapithecus is regarded as the earliest hominid ancestor."
+        },
+        {
+          "id": "zoology-5",
+          "topic": "Animal Diversity and Classification",
+          "subTopic": "Zoology",
+          "difficulty": "Easy",
+          "text": "Which phylum includes animals with a notochord at some stage of life?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Chordata"
+            },
+            {
+              "label": "B",
+              "text": "Arthropoda"
+            },
+            {
+              "label": "C",
+              "text": "Mollusca"
+            },
+            {
+              "label": "D",
+              "text": "Annelida"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Chordata",
+          "rationale": "Chordates possess a notochord at some stage of their life cycle."
+        },
+        {
+          "id": "zoology-6",
+          "topic": "Animal Diversity and Classification",
+          "subTopic": "Zoology",
+          "difficulty": "Easy",
+          "text": "Which phylum is characterized by jointed appendages?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Arthropoda"
+            },
+            {
+              "label": "B",
+              "text": "Annelida"
+            },
+            {
+              "label": "C",
+              "text": "Mollusca"
+            },
+            {
+              "label": "D",
+              "text": "Echinodermata"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Arthropoda",
+          "rationale": "Arthropods have jointed appendages and an exoskeleton."
+        },
+        {
+          "id": "zoology-7",
+          "topic": "Animal Diversity and Classification",
+          "subTopic": "Zoology",
+          "difficulty": "Easy",
+          "text": "Which class do butterflies and beetles belong to?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Insecta"
+            },
+            {
+              "label": "B",
+              "text": "Arachnida"
+            },
+            {
+              "label": "C",
+              "text": "Crustacea"
+            },
+            {
+              "label": "D",
+              "text": "Myriapoda"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Insecta",
+          "rationale": "Butterflies and beetles are insects of class Insecta."
+        },
+        {
+          "id": "zoology-8",
+          "topic": "Animal Diversity and Classification",
+          "subTopic": "Zoology",
+          "difficulty": "Easy",
+          "text": "Which phylum includes animals with a mantle and a muscular foot?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Mollusca"
+            },
+            {
+              "label": "B",
+              "text": "Arthropoda"
+            },
+            {
+              "label": "C",
+              "text": "Cnidaria"
+            },
+            {
+              "label": "D",
+              "text": "Platyhelminthes"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Mollusca",
+          "rationale": "Molluscs have a mantle and a muscular foot."
+        },
+        {
+          "id": "zoology-9",
+          "topic": "Animal Diversity and Classification",
+          "subTopic": "Zoology",
+          "difficulty": "Easy",
+          "text": "Which of the following is a characteristic feature of mammals?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Mammary glands and hair"
+            },
+            {
+              "label": "B",
+              "text": "Scales and gills"
+            },
+            {
+              "label": "C",
+              "text": "Feathers and beak"
+            },
+            {
+              "label": "D",
+              "text": "Dry scaly skin"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Mammary glands and hair",
+          "rationale": "Mammals are characterized by mammary glands and hair."
+        },
+        {
+          "id": "zoology-10",
+          "topic": "Animal Tissues and Histology",
+          "subTopic": "Zoology",
+          "difficulty": "Easy",
+          "text": "Which tissue lines the inner surface of blood vessels?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Endothelium (simple squamous epithelium)"
+            },
+            {
+              "label": "B",
+              "text": "Stratified epithelium"
+            },
+            {
+              "label": "C",
+              "text": "Cuboidal epithelium"
+            },
+            {
+              "label": "D",
+              "text": "Columnar epithelium"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Endothelium (simple squamous epithelium)",
+          "rationale": "Simple squamous epithelium (endothelium) lines blood vessels."
+        },
+        {
+          "id": "zoology-11",
+          "topic": "Animal Tissues and Histology",
+          "subTopic": "Zoology",
+          "difficulty": "Easy",
+          "text": "Which connective tissue stores fat and provides insulation?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Adipose tissue"
+            },
+            {
+              "label": "B",
+              "text": "Cartilage"
+            },
+            {
+              "label": "C",
+              "text": "Bone"
+            },
+            {
+              "label": "D",
+              "text": "Blood"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Adipose tissue",
+          "rationale": "Adipose tissue stores fat and insulates the body."
+        },
+        {
+          "id": "zoology-12",
+          "topic": "Animal Tissues and Histology",
+          "subTopic": "Zoology",
+          "difficulty": "Easy",
+          "text": "Which muscle tissue is voluntary and striated?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Skeletal muscle"
+            },
+            {
+              "label": "B",
+              "text": "Smooth muscle"
+            },
+            {
+              "label": "C",
+              "text": "Cardiac muscle"
+            },
+            {
+              "label": "D",
+              "text": "Nervous tissue"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Skeletal muscle",
+          "rationale": "Skeletal muscle is voluntary and shows striations."
+        },
+        {
+          "id": "zoology-13",
+          "topic": "Evolutionary Biology",
+          "subTopic": "Zoology",
+          "difficulty": "Medium",
+          "text": "Lamarck's theory of evolution is based primarily on:",
+          "options": [
+            {
+              "label": "A",
+              "text": "Inheritance of acquired characters"
+            },
+            {
+              "label": "B",
+              "text": "Natural selection"
+            },
+            {
+              "label": "C",
+              "text": "Genetic drift"
+            },
+            {
+              "label": "D",
+              "text": "Mutation"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Inheritance of acquired characters",
+          "rationale": "Lamarckism emphasizes inheritance of acquired characteristics."
+        },
+        {
+          "id": "zoology-14",
+          "topic": "Evolutionary Biology",
+          "subTopic": "Zoology",
+          "difficulty": "Medium",
+          "text": "Which type of evidence shows that the forelimbs of a bat, whale and human share a common origin?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Homologous organs"
+            },
+            {
+              "label": "B",
+              "text": "Analogous organs"
+            },
+            {
+              "label": "C",
+              "text": "Vestigial organs"
+            },
+            {
+              "label": "D",
+              "text": "Fossil records"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Homologous organs",
+          "rationale": "Homologous organs share a common embryonic origin despite different functions."
+        },
+        {
+          "id": "zoology-15",
+          "topic": "Animal Diversity and Classification",
+          "subTopic": "Zoology",
+          "difficulty": "Medium",
+          "text": "Which class of vertebrates has a three-chambered heart?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Amphibia"
+            },
+            {
+              "label": "B",
+              "text": "Mammalia"
+            },
+            {
+              "label": "C",
+              "text": "Aves"
+            },
+            {
+              "label": "D",
+              "text": "Pisces"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Amphibia",
+          "rationale": "Amphibians have a three-chambered heart (two atria, one ventricle)."
+        },
+        {
+          "id": "zoology-16",
+          "topic": "Animal Tissues and Histology",
+          "subTopic": "Zoology",
+          "difficulty": "Medium",
+          "text": "Which type of epithelium is best suited for diffusion and filtration?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Simple squamous"
+            },
+            {
+              "label": "B",
+              "text": "Stratified squamous"
+            },
+            {
+              "label": "C",
+              "text": "Cuboidal"
+            },
+            {
+              "label": "D",
+              "text": "Columnar"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Simple squamous",
+          "rationale": "Simple squamous epithelium is thin, ideal for diffusion and filtration."
+        },
+        {
+          "id": "zoology-17",
+          "topic": "Study of Selected Animals",
+          "subTopic": "Zoology",
+          "difficulty": "Medium",
+          "text": "Which structure in the frog is used for respiration on land?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Lungs"
+            },
+            {
+              "label": "B",
+              "text": "Gills"
+            },
+            {
+              "label": "C",
+              "text": "Trachea"
+            },
+            {
+              "label": "D",
+              "text": "Spiracle"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Lungs",
+          "rationale": "Adult frogs respire through lungs and skin on land."
+        },
+        {
+          "id": "zoology-18",
+          "topic": "Study of Selected Animals",
+          "subTopic": "Zoology",
+          "difficulty": "Medium",
+          "text": "In the life cycle of Plasmodium, which stage is infective to humans?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Sporozoite"
+            },
+            {
+              "label": "B",
+              "text": "Merozoite"
+            },
+            {
+              "label": "C",
+              "text": "Gametocyte"
+            },
+            {
+              "label": "D",
+              "text": "Trophozoite"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Sporozoite",
+          "rationale": "Sporozoites injected by mosquito bite are infective to humans."
+        },
+        {
+          "id": "zoology-19",
+          "topic": "Human Biology and Physiology",
+          "subTopic": "Zoology",
+          "difficulty": "Medium",
+          "text": "Which blood vessel carries oxygenated blood from the lungs to the heart?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Pulmonary vein"
+            },
+            {
+              "label": "B",
+              "text": "Pulmonary artery"
+            },
+            {
+              "label": "C",
+              "text": "Aorta"
+            },
+            {
+              "label": "D",
+              "text": "Vena cava"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Pulmonary vein",
+          "rationale": "The pulmonary vein is the only vein carrying oxygenated blood."
+        },
+        {
+          "id": "zoology-20",
+          "topic": "Microbial Diseases and Immunology",
+          "subTopic": "Zoology",
+          "difficulty": "Medium",
+          "text": "Which type of vaccine uses a weakened form of the pathogen?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Live attenuated vaccine"
+            },
+            {
+              "label": "B",
+              "text": "Inactivated vaccine"
+            },
+            {
+              "label": "C",
+              "text": "Toxoid vaccine"
+            },
+            {
+              "label": "D",
+              "text": "Subunit vaccine"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Live attenuated vaccine",
+          "rationale": "Live attenuated vaccines use weakened live pathogens."
+        },
+        {
+          "id": "zoology-21",
+          "topic": "Study of Selected Animals",
+          "subTopic": "Zoology",
+          "difficulty": "Hard",
+          "text": "Which type of malaria is caused by Plasmodium falciparum?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Malignant tertian malaria"
+            },
+            {
+              "label": "B",
+              "text": "Benign tertian malaria"
+            },
+            {
+              "label": "C",
+              "text": "Quartan malaria"
+            },
+            {
+              "label": "D",
+              "text": "Ovale malaria"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Malignant tertian malaria",
+          "rationale": "P. falciparum causes malignant tertian malaria, the most severe form."
+        },
+        {
+          "id": "zoology-22",
+          "topic": "Human Biology and Physiology",
+          "subTopic": "Zoology",
+          "difficulty": "Hard",
+          "text": "Which blood group is the universal donor?",
+          "options": [
+            {
+              "label": "A",
+              "text": "O negative"
+            },
+            {
+              "label": "B",
+              "text": "AB positive"
+            },
+            {
+              "label": "C",
+              "text": "A positive"
+            },
+            {
+              "label": "D",
+              "text": "B negative"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "O negative",
+          "rationale": "O negative lacks A, B and Rh antigens, so it can be given to all."
+        },
+        {
+          "id": "zoology-23",
+          "topic": "Medical Technology and Applied Biology",
+          "subTopic": "Zoology",
+          "difficulty": "Hard",
+          "text": "Which microorganism is used in the production of yogurt?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Lactobacillus"
+            },
+            {
+              "label": "B",
+              "text": "E. coli"
+            },
+            {
+              "label": "C",
+              "text": "Salmonella"
+            },
+            {
+              "label": "D",
+              "text": "Staphylococcus"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Lactobacillus",
+          "rationale": "Lactobacillus ferments milk to produce yogurt."
+        },
+        {
+          "id": "zoology-24",
+          "topic": "Biota, Environment and Conservation",
+          "subTopic": "Zoology",
+          "difficulty": "Hard",
+          "text": "Which wetland site in Nepal is designated as a Ramsar site?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Koshi Tappu"
+            },
+            {
+              "label": "B",
+              "text": "Chitwan National Park"
+            },
+            {
+              "label": "C",
+              "text": "Sagarmatha National Park"
+            },
+            {
+              "label": "D",
+              "text": "Langtang National Park"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Koshi Tappu",
+          "rationale": "Koshi Tappu Wildlife Reserve is a Ramsar site in Nepal."
+        }
+      ]
+    },
+    "botany": {
+      "label": "Botany",
+      "balance": {
+        "Easy": 10,
+        "Medium": 8,
+        "Hard": 2,
+        "total": 20
+      },
+      "questions": [
+        {
+          "id": "botany-1",
+          "topic": "Basic Components of Life",
+          "subTopic": "Botany",
+          "difficulty": "Easy",
+          "text": "Which monosaccharide is the main energy source for cells?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Glucose"
+            },
+            {
+              "label": "B",
+              "text": "Fructose"
+            },
+            {
+              "label": "C",
+              "text": "Galactose"
+            },
+            {
+              "label": "D",
+              "text": "Ribose"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Glucose",
+          "rationale": "Glucose is the primary energy source for cellular respiration."
+        },
+        {
+          "id": "botany-2",
+          "topic": "Basic Components of Life",
+          "subTopic": "Botany",
+          "difficulty": "Easy",
+          "text": "Which biomolecule acts as a biological catalyst?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Enzyme"
+            },
+            {
+              "label": "B",
+              "text": "Lipid"
+            },
+            {
+              "label": "C",
+              "text": "Carbohydrate"
+            },
+            {
+              "label": "D",
+              "text": "Mineral"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Enzyme",
+          "rationale": "Enzymes are proteins that catalyze biochemical reactions."
+        },
+        {
+          "id": "botany-3",
+          "topic": "Basic Components of Life",
+          "subTopic": "Botany",
+          "difficulty": "Easy",
+          "text": "Which lipid is a major component of the cell membrane?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Phospholipid"
+            },
+            {
+              "label": "B",
+              "text": "Triglyceride"
+            },
+            {
+              "label": "C",
+              "text": "Wax"
+            },
+            {
+              "label": "D",
+              "text": "Steroid"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Phospholipid",
+          "rationale": "Phospholipids form the bilayer of cell membranes."
+        },
+        {
+          "id": "botany-4",
+          "topic": "Biodiversity",
+          "subTopic": "Botany",
+          "difficulty": "Easy",
+          "text": "Which plant group is known as the amphibians of the plant kingdom?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Bryophyta"
+            },
+            {
+              "label": "B",
+              "text": "Pteridophyta"
+            },
+            {
+              "label": "C",
+              "text": "Gymnospermae"
+            },
+            {
+              "label": "D",
+              "text": "Angiospermae"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Bryophyta",
+          "rationale": "Bryophytes need water for reproduction, like amphibians."
+        },
+        {
+          "id": "botany-5",
+          "topic": "Biodiversity",
+          "subTopic": "Botany",
+          "difficulty": "Easy",
+          "text": "Which plant group includes ferns?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Pteridophyta"
+            },
+            {
+              "label": "B",
+              "text": "Bryophyta"
+            },
+            {
+              "label": "C",
+              "text": "Gymnospermae"
+            },
+            {
+              "label": "D",
+              "text": "Angiospermae"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Pteridophyta",
+          "rationale": "Ferns belong to Pteridophyta, the first vascular plants."
+        },
+        {
+          "id": "botany-6",
+          "topic": "Biodiversity",
+          "subTopic": "Botany",
+          "difficulty": "Easy",
+          "text": "Which plant group produces naked seeds without flowers?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Gymnospermae"
+            },
+            {
+              "label": "B",
+              "text": "Bryophyta"
+            },
+            {
+              "label": "C",
+              "text": "Pteridophyta"
+            },
+            {
+              "label": "D",
+              "text": "Angiospermae"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Gymnospermae",
+          "rationale": "Gymnosperms produce naked seeds without flowers or fruits."
+        },
+        {
+          "id": "botany-7",
+          "topic": "Biodiversity",
+          "subTopic": "Botany",
+          "difficulty": "Easy",
+          "text": "Which plant group includes flowering plants?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Angiospermae"
+            },
+            {
+              "label": "B",
+              "text": "Gymnospermae"
+            },
+            {
+              "label": "C",
+              "text": "Bryophyta"
+            },
+            {
+              "label": "D",
+              "text": "Pteridophyta"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Angiospermae",
+          "rationale": "Angiosperms are flowering plants with enclosed seeds."
+        },
+        {
+          "id": "botany-8",
+          "topic": "Biodiversity",
+          "subTopic": "Botany",
+          "difficulty": "Easy",
+          "text": "Which medicinal plant is known as Sarpagandha and used for hypertension?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Rauwolfia serpentina"
+            },
+            {
+              "label": "B",
+              "text": "Azadirachta indica"
+            },
+            {
+              "label": "C",
+              "text": "Ocimum sanctum"
+            },
+            {
+              "label": "D",
+              "text": "Zingiber officinale"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Rauwolfia serpentina",
+          "rationale": "Rauwolfia serpentina (Sarpagandha) is used to treat hypertension."
+        },
+        {
+          "id": "botany-9",
+          "topic": "Biodiversity",
+          "subTopic": "Botany",
+          "difficulty": "Easy",
+          "text": "Which plant is known as Yarsagumba and is a valuable medicinal fungus in Nepal?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Ophiocordyceps sinensis"
+            },
+            {
+              "label": "B",
+              "text": "Agaricus"
+            },
+            {
+              "label": "C",
+              "text": "Penicillium"
+            },
+            {
+              "label": "D",
+              "text": "Mucor"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Ophiocordyceps sinensis",
+          "rationale": "Ophiocordyceps sinensis (Yarsagumba) is a prized medicinal fungus."
+        },
+        {
+          "id": "botany-10",
+          "topic": "Biodiversity",
+          "subTopic": "Botany",
+          "difficulty": "Easy",
+          "text": "Which plant is commonly known as Neem and has antibacterial properties?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Azadirachta indica"
+            },
+            {
+              "label": "B",
+              "text": "Rauwolfia serpentina"
+            },
+            {
+              "label": "C",
+              "text": "Ocimum sanctum"
+            },
+            {
+              "label": "D",
+              "text": "Zingiber officinale"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Azadirachta indica",
+          "rationale": "Azadirachta indica (Neem) has antibacterial and medicinal properties."
+        },
+        {
+          "id": "botany-11",
+          "topic": "Basic Components of Life",
+          "subTopic": "Botany",
+          "difficulty": "Medium",
+          "text": "Which mineral is a component of chlorophyll?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Magnesium"
+            },
+            {
+              "label": "B",
+              "text": "Calcium"
+            },
+            {
+              "label": "C",
+              "text": "Iron"
+            },
+            {
+              "label": "D",
+              "text": "Potassium"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Magnesium",
+          "rationale": "Magnesium is at the center of the chlorophyll molecule."
+        },
+        {
+          "id": "botany-12",
+          "topic": "Biodiversity",
+          "subTopic": "Botany",
+          "difficulty": "Medium",
+          "text": "Which family of flowering plants has the floral formula with 5 sepals, 5 petals and 5 stamens?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Solanaceae"
+            },
+            {
+              "label": "B",
+              "text": "Brassicaceae"
+            },
+            {
+              "label": "C",
+              "text": "Fabaceae"
+            },
+            {
+              "label": "D",
+              "text": "Liliaceae"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Solanaceae",
+          "rationale": "Solanaceae typically has 5 sepals, 5 petals and 5 stamens."
+        },
+        {
+          "id": "botany-13",
+          "topic": "Biodiversity",
+          "subTopic": "Botany",
+          "difficulty": "Medium",
+          "text": "Which structure of Spirogyra is used for sexual reproduction?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Conjugation tube"
+            },
+            {
+              "label": "B",
+              "text": "Zoospore"
+            },
+            {
+              "label": "C",
+              "text": "Akinete"
+            },
+            {
+              "label": "D",
+              "text": "Aplanospore"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Conjugation tube",
+          "rationale": "Spirogyra reproduces sexually by conjugation through a conjugation tube."
+        },
+        {
+          "id": "botany-14",
+          "topic": "Ecology and Vegetation",
+          "subTopic": "Botany",
+          "difficulty": "Medium",
+          "text": "Which phenomenon is caused by the depletion of the ozone layer?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Increased UV radiation reaching Earth"
+            },
+            {
+              "label": "B",
+              "text": "Global cooling"
+            },
+            {
+              "label": "C",
+              "text": "Acid rain"
+            },
+            {
+              "label": "D",
+              "text": "Eutrophication"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Increased UV radiation reaching Earth",
+          "rationale": "Ozone depletion allows more harmful UV radiation to reach Earth."
+        },
+        {
+          "id": "botany-15",
+          "topic": "Cell Biology",
+          "subTopic": "Botany",
+          "difficulty": "Medium",
+          "text": "Which organelle is involved in the synthesis and packaging of proteins and lipids?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Golgi body"
+            },
+            {
+              "label": "B",
+              "text": "Ribosome"
+            },
+            {
+              "label": "C",
+              "text": "Mitochondria"
+            },
+            {
+              "label": "D",
+              "text": "Chloroplast"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Golgi body",
+          "rationale": "The Golgi body modifies, sorts and packages proteins and lipids."
+        },
+        {
+          "id": "botany-16",
+          "topic": "Genetics",
+          "subTopic": "Botany",
+          "difficulty": "Medium",
+          "text": "Which type of inheritance is shown by color blindness in humans?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Sex-linked inheritance"
+            },
+            {
+              "label": "B",
+              "text": "Autosomal dominant"
+            },
+            {
+              "label": "C",
+              "text": "Autosomal recessive"
+            },
+            {
+              "label": "D",
+              "text": "Co-dominance"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Sex-linked inheritance",
+          "rationale": "Color blindness is an X-linked (sex-linked) recessive trait."
+        },
+        {
+          "id": "botany-17",
+          "topic": "Plant Anatomy",
+          "subTopic": "Botany",
+          "difficulty": "Medium",
+          "text": "Which type of vascular bundle has xylem and phloem on the same radius?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Conjoint"
+            },
+            {
+              "label": "B",
+              "text": "Radial"
+            },
+            {
+              "label": "C",
+              "text": "Concentric"
+            },
+            {
+              "label": "D",
+              "text": "Collateral"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Conjoint",
+          "rationale": "Conjoint bundles have xylem and phloem on the same radius."
+        },
+        {
+          "id": "botany-18",
+          "topic": "Developmental Botany",
+          "subTopic": "Botany",
+          "difficulty": "Medium",
+          "text": "Which type of endosperm is formed by the fusion of one sperm with two polar nuclei?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Triploid endosperm"
+            },
+            {
+              "label": "B",
+              "text": "Diploid endosperm"
+            },
+            {
+              "label": "C",
+              "text": "Haploid endosperm"
+            },
+            {
+              "label": "D",
+              "text": "Tetraploid endosperm"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Triploid endosperm",
+          "rationale": "Double fertilization produces triploid (3n) endosperm."
+        },
+        {
+          "id": "botany-19",
+          "topic": "Ecology and Vegetation",
+          "subTopic": "Botany",
+          "difficulty": "Hard",
+          "text": "Which forest type is found in the Terai region of Nepal?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Tropical deciduous forest"
+            },
+            {
+              "label": "B",
+              "text": "Alpine forest"
+            },
+            {
+              "label": "C",
+              "text": "Temperate forest"
+            },
+            {
+              "label": "D",
+              "text": "Subalpine forest"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Tropical deciduous forest",
+          "rationale": "Tropical deciduous forests dominate the Terai region."
+        },
+        {
+          "id": "botany-20",
+          "topic": "Applied Botany",
+          "subTopic": "Botany",
+          "difficulty": "Hard",
+          "text": "Which crop is a major cash crop of Nepal?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Tea"
+            },
+            {
+              "label": "B",
+              "text": "Rice"
+            },
+            {
+              "label": "C",
+              "text": "Wheat"
+            },
+            {
+              "label": "D",
+              "text": "Barley"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Tea",
+          "rationale": "Tea is a major cash crop grown in Nepal."
+        }
+      ]
+    },
+    "chemistry": {
+      "label": "Chemistry",
+      "balance": {
+        "Easy": 15,
+        "Medium": 9,
+        "Hard": 6,
+        "total": 30
+      },
+      "questions": [
+        {
+          "id": "chemistry-1",
+          "topic": "Physical Chemistry",
+          "subTopic": "Physical",
+          "difficulty": "Easy",
+          "text": "What is the pH of a neutral solution at 25°C?",
+          "options": [
+            {
+              "label": "A",
+              "text": "7"
+            },
+            {
+              "label": "B",
+              "text": "0"
+            },
+            {
+              "label": "C",
+              "text": "14"
+            },
+            {
+              "label": "D",
+              "text": "1"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "7",
+          "rationale": "Pure water has a pH of 7 at 25°C."
+        },
+        {
+          "id": "chemistry-2",
+          "topic": "Physical Chemistry",
+          "subTopic": "Physical",
+          "difficulty": "Easy",
+          "text": "Which gas law states that pressure is inversely proportional to volume at constant temperature?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Boyle's law"
+            },
+            {
+              "label": "B",
+              "text": "Charles's law"
+            },
+            {
+              "label": "C",
+              "text": "Avogadro's law"
+            },
+            {
+              "label": "D",
+              "text": "Gay-Lussac's law"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Boyle's law",
+          "rationale": "Boyle's law: P ∝ 1/V at constant temperature."
+        },
+        {
+          "id": "chemistry-3",
+          "topic": "Physical Chemistry",
+          "subTopic": "Physical",
+          "difficulty": "Easy",
+          "text": "What is the unit of molarity?",
+          "options": [
+            {
+              "label": "A",
+              "text": "mol/L"
+            },
+            {
+              "label": "B",
+              "text": "g/L"
+            },
+            {
+              "label": "C",
+              "text": "mol/kg"
+            },
+            {
+              "label": "D",
+              "text": "g/mol"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "mol/L",
+          "rationale": "Molarity is moles of solute per liter of solution (mol/L)."
+        },
+        {
+          "id": "chemistry-4",
+          "topic": "Physical Chemistry",
+          "subTopic": "Physical",
+          "difficulty": "Easy",
+          "text": "Which process absorbs heat from the surroundings?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Endothermic"
+            },
+            {
+              "label": "B",
+              "text": "Exothermic"
+            },
+            {
+              "label": "C",
+              "text": "Isothermal"
+            },
+            {
+              "label": "D",
+              "text": "Adiabatic"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Endothermic",
+          "rationale": "Endothermic processes absorb heat."
+        },
+        {
+          "id": "chemistry-5",
+          "topic": "Physical Chemistry",
+          "subTopic": "Physical",
+          "difficulty": "Easy",
+          "text": "What is Avogadro's number?",
+          "options": [
+            {
+              "label": "A",
+              "text": "6.022 × 10^23"
+            },
+            {
+              "label": "B",
+              "text": "3.011 × 10^23"
+            },
+            {
+              "label": "C",
+              "text": "6.022 × 10^22"
+            },
+            {
+              "label": "D",
+              "text": "6.022 × 10^24"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "6.022 × 10^23",
+          "rationale": "Avogadro's number is 6.022 × 10^23 particles per mole."
+        },
+        {
+          "id": "chemistry-6",
+          "topic": "Physical Chemistry",
+          "subTopic": "Physical",
+          "difficulty": "Easy",
+          "text": "Which law states that the rate of a reaction is proportional to the product of concentrations of reactants?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Law of mass action"
+            },
+            {
+              "label": "B",
+              "text": "Boyle's law"
+            },
+            {
+              "label": "C",
+              "text": "Hess's law"
+            },
+            {
+              "label": "D",
+              "text": "Dalton's law"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Law of mass action",
+          "rationale": "The law of mass action relates reaction rate to reactant concentrations."
+        },
+        {
+          "id": "chemistry-7",
+          "topic": "Physical Chemistry",
+          "subTopic": "Physical",
+          "difficulty": "Easy",
+          "text": "Which principle states that a system at equilibrium responds to stress by shifting to counteract it?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Le Chatelier's principle"
+            },
+            {
+              "label": "B",
+              "text": "Aufbau principle"
+            },
+            {
+              "label": "C",
+              "text": "Pauli's exclusion principle"
+            },
+            {
+              "label": "D",
+              "text": "Hund's rule"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Le Chatelier's principle",
+          "rationale": "Le Chatelier's principle describes equilibrium shifts under stress."
+        },
+        {
+          "id": "chemistry-8",
+          "topic": "Physical Chemistry",
+          "subTopic": "Physical",
+          "difficulty": "Easy",
+          "text": "Which quantum number describes the shape of an orbital?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Azimuthal quantum number (l)"
+            },
+            {
+              "label": "B",
+              "text": "Principal quantum number (n)"
+            },
+            {
+              "label": "C",
+              "text": "Magnetic quantum number (m)"
+            },
+            {
+              "label": "D",
+              "text": "Spin quantum number (s)"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Azimuthal quantum number (l)",
+          "rationale": "The azimuthal quantum number (l) determines orbital shape."
+        },
+        {
+          "id": "chemistry-9",
+          "topic": "Physical Chemistry",
+          "subTopic": "Physical",
+          "difficulty": "Easy",
+          "text": "Which principle states that no two electrons in an atom can have the same set of four quantum numbers?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Pauli's exclusion principle"
+            },
+            {
+              "label": "B",
+              "text": "Aufbau principle"
+            },
+            {
+              "label": "C",
+              "text": "Hund's rule"
+            },
+            {
+              "label": "D",
+              "text": "Heisenberg's principle"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Pauli's exclusion principle",
+          "rationale": "Pauli's exclusion principle governs electron configuration."
+        },
+        {
+          "id": "chemistry-10",
+          "topic": "Physical Chemistry",
+          "subTopic": "Physical",
+          "difficulty": "Easy",
+          "text": "Which type of bond is formed by the sharing of electrons between atoms?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Covalent bond"
+            },
+            {
+              "label": "B",
+              "text": "Ionic bond"
+            },
+            {
+              "label": "C",
+              "text": "Metallic bond"
+            },
+            {
+              "label": "D",
+              "text": "Hydrogen bond"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Covalent bond",
+          "rationale": "Covalent bonds form by electron sharing."
+        },
+        {
+          "id": "chemistry-11",
+          "topic": "Physical Chemistry",
+          "subTopic": "Physical",
+          "difficulty": "Easy",
+          "text": "Which theory explains the shape of molecules based on electron pair repulsion?",
+          "options": [
+            {
+              "label": "A",
+              "text": "VSEPR theory"
+            },
+            {
+              "label": "B",
+              "text": "Valence bond theory"
+            },
+            {
+              "label": "C",
+              "text": "Molecular orbital theory"
+            },
+            {
+              "label": "D",
+              "text": "Crystal field theory"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "VSEPR theory",
+          "rationale": "VSEPR theory predicts molecular shape from electron pair repulsion."
+        },
+        {
+          "id": "chemistry-12",
+          "topic": "Physical Chemistry",
+          "subTopic": "Physical",
+          "difficulty": "Easy",
+          "text": "Which law states that the total pressure of a gas mixture is the sum of partial pressures?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Dalton's law"
+            },
+            {
+              "label": "B",
+              "text": "Boyle's law"
+            },
+            {
+              "label": "C",
+              "text": "Charles's law"
+            },
+            {
+              "label": "D",
+              "text": "Avogadro's law"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Dalton's law",
+          "rationale": "Dalton's law of partial pressures applies to gas mixtures."
+        },
+        {
+          "id": "chemistry-13",
+          "topic": "Physical Chemistry",
+          "subTopic": "Physical",
+          "difficulty": "Easy",
+          "text": "Which cell converts chemical energy into electrical energy?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Galvanic cell"
+            },
+            {
+              "label": "B",
+              "text": "Electrolytic cell"
+            },
+            {
+              "label": "C",
+              "text": "Fuel cell"
+            },
+            {
+              "label": "D",
+              "text": "Electrochemical cell"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Galvanic cell",
+          "rationale": "A galvanic (voltaic) cell converts chemical to electrical energy."
+        },
+        {
+          "id": "chemistry-14",
+          "topic": "Physical Chemistry",
+          "subTopic": "Physical",
+          "difficulty": "Easy",
+          "text": "Which quantity is a measure of the disorder of a system?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Entropy"
+            },
+            {
+              "label": "B",
+              "text": "Enthalpy"
+            },
+            {
+              "label": "C",
+              "text": "Internal energy"
+            },
+            {
+              "label": "D",
+              "text": "Free energy"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Entropy",
+          "rationale": "Entropy measures the disorder or randomness of a system."
+        },
+        {
+          "id": "chemistry-15",
+          "topic": "Physical Chemistry",
+          "subTopic": "Physical",
+          "difficulty": "Easy",
+          "text": "Which process is the direct conversion of a solid to a gas?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Sublimation"
+            },
+            {
+              "label": "B",
+              "text": "Evaporation"
+            },
+            {
+              "label": "C",
+              "text": "Condensation"
+            },
+            {
+              "label": "D",
+              "text": "Melting"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Sublimation",
+          "rationale": "Sublimation is the direct solid-to-gas transition."
+        },
+        {
+          "id": "chemistry-16",
+          "topic": "Physical Chemistry",
+          "subTopic": "Physical",
+          "difficulty": "Medium",
+          "text": "What is the oxidation state of oxygen in hydrogen peroxide (H2O2)?",
+          "options": [
+            {
+              "label": "A",
+              "text": "-1"
+            },
+            {
+              "label": "B",
+              "text": "-2"
+            },
+            {
+              "label": "C",
+              "text": "0"
+            },
+            {
+              "label": "D",
+              "text": "+1"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "-1",
+          "rationale": "Oxygen has an oxidation state of -1 in peroxides."
+        },
+        {
+          "id": "chemistry-17",
+          "topic": "Physical Chemistry",
+          "subTopic": "Physical",
+          "difficulty": "Medium",
+          "text": "What is the normality of a 1 M solution of H2SO4?",
+          "options": [
+            {
+              "label": "A",
+              "text": "2 N"
+            },
+            {
+              "label": "B",
+              "text": "1 N"
+            },
+            {
+              "label": "C",
+              "text": "4 N"
+            },
+            {
+              "label": "D",
+              "text": "0.5 N"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "2 N",
+          "rationale": "H2SO4 has 2 replaceable H+ ions, so 1 M = 2 N."
+        },
+        {
+          "id": "chemistry-18",
+          "topic": "Physical Chemistry",
+          "subTopic": "Physical",
+          "difficulty": "Medium",
+          "text": "What is the relationship between Kp and Kc for a gaseous reaction?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Kp = Kc(RT)^Δn"
+            },
+            {
+              "label": "B",
+              "text": "Kp = Kc"
+            },
+            {
+              "label": "C",
+              "text": "Kp = Kc/RT"
+            },
+            {
+              "label": "D",
+              "text": "Kp = Kc(RT)"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Kp = Kc(RT)^Δn",
+          "rationale": "Kp = Kc(RT)^Δn where Δn is the change in moles of gas."
+        },
+        {
+          "id": "chemistry-19",
+          "topic": "Physical Chemistry",
+          "subTopic": "Physical",
+          "difficulty": "Medium",
+          "text": "Which type of reaction has a half-life independent of initial concentration?",
+          "options": [
+            {
+              "label": "A",
+              "text": "First order"
+            },
+            {
+              "label": "B",
+              "text": "Zero order"
+            },
+            {
+              "label": "C",
+              "text": "Second order"
+            },
+            {
+              "label": "D",
+              "text": "Third order"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "First order",
+          "rationale": "First-order reactions have a constant half-life."
+        },
+        {
+          "id": "chemistry-20",
+          "topic": "Inorganic Chemistry",
+          "subTopic": "Inorganic",
+          "difficulty": "Medium",
+          "text": "Which element is a metalloid?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Silicon"
+            },
+            {
+              "label": "B",
+              "text": "Carbon"
+            },
+            {
+              "label": "C",
+              "text": "Oxygen"
+            },
+            {
+              "label": "D",
+              "text": "Sodium"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Silicon",
+          "rationale": "Silicon is a metalloid with properties of metals and non-metals."
+        },
+        {
+          "id": "chemistry-21",
+          "topic": "Organic Chemistry",
+          "subTopic": "Organic",
+          "difficulty": "Medium",
+          "text": "What are the products of complete combustion of methane?",
+          "options": [
+            {
+              "label": "A",
+              "text": "CO2 and H2O"
+            },
+            {
+              "label": "B",
+              "text": "CO and H2O"
+            },
+            {
+              "label": "C",
+              "text": "C and H2O"
+            },
+            {
+              "label": "D",
+              "text": "CO2 and H2"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "CO2 and H2O",
+          "rationale": "Complete combustion of methane yields CO2 and H2O."
+        },
+        {
+          "id": "chemistry-22",
+          "topic": "Organic Chemistry",
+          "subTopic": "Organic",
+          "difficulty": "Medium",
+          "text": "Which type of reaction is the addition of H2 to ethene?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Hydrogenation"
+            },
+            {
+              "label": "B",
+              "text": "Halogenation"
+            },
+            {
+              "label": "C",
+              "text": "Hydration"
+            },
+            {
+              "label": "D",
+              "text": "Oxidation"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Hydrogenation",
+          "rationale": "Adding H2 to ethene is hydrogenation, producing ethane."
+        },
+        {
+          "id": "chemistry-23",
+          "topic": "Organic Chemistry",
+          "subTopic": "Organic",
+          "difficulty": "Medium",
+          "text": "Which type of reaction is esterification?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Condensation"
+            },
+            {
+              "label": "B",
+              "text": "Addition"
+            },
+            {
+              "label": "C",
+              "text": "Substitution"
+            },
+            {
+              "label": "D",
+              "text": "Elimination"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Condensation",
+          "rationale": "Esterification is a condensation reaction between an acid and alcohol."
+        },
+        {
+          "id": "chemistry-24",
+          "topic": "Organic Chemistry",
+          "subTopic": "Organic",
+          "difficulty": "Medium",
+          "text": "Which type of mechanism involves a two-step process with a carbocation intermediate?",
+          "options": [
+            {
+              "label": "A",
+              "text": "SN1"
+            },
+            {
+              "label": "B",
+              "text": "SN2"
+            },
+            {
+              "label": "C",
+              "text": "E2"
+            },
+            {
+              "label": "D",
+              "text": "Free radical"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "SN1",
+          "rationale": "SN1 proceeds via a carbocation intermediate in two steps."
+        },
+        {
+          "id": "chemistry-25",
+          "topic": "Physical Chemistry",
+          "subTopic": "Physical",
+          "difficulty": "Hard",
+          "text": "What is the pH of a 0.001 M HCl solution?",
+          "options": [
+            {
+              "label": "A",
+              "text": "3"
+            },
+            {
+              "label": "B",
+              "text": "2"
+            },
+            {
+              "label": "C",
+              "text": "1"
+            },
+            {
+              "label": "D",
+              "text": "4"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "3",
+          "rationale": "pH = -log(0.001) = 3."
+        },
+        {
+          "id": "chemistry-26",
+          "topic": "Organic Chemistry",
+          "subTopic": "Organic",
+          "difficulty": "Hard",
+          "text": "What is the IUPAC name of CH3CH2OH?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Ethanol"
+            },
+            {
+              "label": "B",
+              "text": "Methanol"
+            },
+            {
+              "label": "C",
+              "text": "Ethanal"
+            },
+            {
+              "label": "D",
+              "text": "Ethanoic acid"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Ethanol",
+          "rationale": "CH3CH2OH is a two-carbon alcohol, ethanol."
+        },
+        {
+          "id": "chemistry-27",
+          "topic": "Organic Chemistry",
+          "subTopic": "Organic",
+          "difficulty": "Hard",
+          "text": "Which reagent is used to test for aldehydes?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Tollens' reagent"
+            },
+            {
+              "label": "B",
+              "text": "Benedict's solution"
+            },
+            {
+              "label": "C",
+              "text": "Lucas reagent"
+            },
+            {
+              "label": "D",
+              "text": "Fehling's solution"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Tollens' reagent",
+          "rationale": "Tollens' reagent (ammoniacal silver nitrate) tests for aldehydes."
+        },
+        {
+          "id": "chemistry-28",
+          "topic": "Applied Chemistry",
+          "subTopic": "Applied",
+          "difficulty": "Hard",
+          "text": "Which compound is used as a fertilizer to supply nitrogen to plants?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Urea"
+            },
+            {
+              "label": "B",
+              "text": "NaCl"
+            },
+            {
+              "label": "C",
+              "text": "CaCO3"
+            },
+            {
+              "label": "D",
+              "text": "SiO2"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Urea",
+          "rationale": "Urea (CO(NH2)2) is a nitrogen-rich fertilizer."
+        },
+        {
+          "id": "chemistry-29",
+          "topic": "Applied Chemistry",
+          "subTopic": "Applied",
+          "difficulty": "Hard",
+          "text": "Which type of material is used to make biodegradable plastics?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Polylactic acid"
+            },
+            {
+              "label": "B",
+              "text": "Polyethylene"
+            },
+            {
+              "label": "C",
+              "text": "PVC"
+            },
+            {
+              "label": "D",
+              "text": "Polystyrene"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Polylactic acid",
+          "rationale": "Polylactic acid (PLA) is a biodegradable polymer."
+        },
+        {
+          "id": "chemistry-30",
+          "topic": "Analytical Chemistry",
+          "subTopic": "Analytical",
+          "difficulty": "Hard",
+          "text": "Which indicator is commonly used in acid-base titration?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Phenolphthalein"
+            },
+            {
+              "label": "B",
+              "text": "Starch"
+            },
+            {
+              "label": "C",
+              "text": "Methyl orange"
+            },
+            {
+              "label": "D",
+              "text": "Both phenolphthalein and methyl orange"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Phenolphthalein",
+          "rationale": "Phenolphthalein and methyl orange are common acid-base indicators."
+        }
+      ]
+    },
+    "physics": {
+      "label": "Physics",
+      "balance": {
+        "Easy": 8,
+        "Medium": 3,
+        "Hard": 5,
+        "total": 16
+      },
+      "questions": [
+        {
+          "id": "physics-1",
+          "topic": "Mechanics",
+          "subTopic": "Mechanics",
+          "difficulty": "Easy",
+          "text": "What is the SI unit of force?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Newton"
+            },
+            {
+              "label": "B",
+              "text": "Joule"
+            },
+            {
+              "label": "C",
+              "text": "Watt"
+            },
+            {
+              "label": "D",
+              "text": "Pascal"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Newton",
+          "rationale": "Force is measured in newtons (N)."
+        },
+        {
+          "id": "physics-2",
+          "topic": "Mechanics",
+          "subTopic": "Mechanics",
+          "difficulty": "Easy",
+          "text": "What is the approximate acceleration due to gravity on Earth?",
+          "options": [
+            {
+              "label": "A",
+              "text": "9.8 m/s²"
+            },
+            {
+              "label": "B",
+              "text": "6.7 m/s²"
+            },
+            {
+              "label": "C",
+              "text": "3.7 m/s²"
+            },
+            {
+              "label": "D",
+              "text": "1.6 m/s²"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "9.8 m/s²",
+          "rationale": "g ≈ 9.8 m/s² on Earth."
+        },
+        {
+          "id": "physics-3",
+          "topic": "Mechanics",
+          "subTopic": "Mechanics",
+          "difficulty": "Easy",
+          "text": "Which law states that force equals mass times acceleration?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Newton's second law"
+            },
+            {
+              "label": "B",
+              "text": "Newton's first law"
+            },
+            {
+              "label": "C",
+              "text": "Newton's third law"
+            },
+            {
+              "label": "D",
+              "text": "Law of gravitation"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Newton's second law",
+          "rationale": "F = ma is Newton's second law."
+        },
+        {
+          "id": "physics-4",
+          "topic": "Mechanics",
+          "subTopic": "Mechanics",
+          "difficulty": "Easy",
+          "text": "What is the SI unit of work?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Joule"
+            },
+            {
+              "label": "B",
+              "text": "Newton"
+            },
+            {
+              "label": "C",
+              "text": "Watt"
+            },
+            {
+              "label": "D",
+              "text": "Pascal"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Joule",
+          "rationale": "Work and energy are measured in joules (J)."
+        },
+        {
+          "id": "physics-5",
+          "topic": "Mechanics",
+          "subTopic": "Mechanics",
+          "difficulty": "Easy",
+          "text": "Which of the following is a vector quantity?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Velocity"
+            },
+            {
+              "label": "B",
+              "text": "Speed"
+            },
+            {
+              "label": "C",
+              "text": "Mass"
+            },
+            {
+              "label": "D",
+              "text": "Time"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Velocity",
+          "rationale": "Velocity has both magnitude and direction."
+        },
+        {
+          "id": "physics-6",
+          "topic": "Mechanics",
+          "subTopic": "Mechanics",
+          "difficulty": "Easy",
+          "text": "What is the SI unit of power?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Watt"
+            },
+            {
+              "label": "B",
+              "text": "Joule"
+            },
+            {
+              "label": "C",
+              "text": "Newton"
+            },
+            {
+              "label": "D",
+              "text": "Pascal"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Watt",
+          "rationale": "Power is measured in watts (W)."
+        },
+        {
+          "id": "physics-7",
+          "topic": "Mechanics",
+          "subTopic": "Mechanics",
+          "difficulty": "Easy",
+          "text": "Which of the following is a non-contact force?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Gravity"
+            },
+            {
+              "label": "B",
+              "text": "Friction"
+            },
+            {
+              "label": "C",
+              "text": "Tension"
+            },
+            {
+              "label": "D",
+              "text": "Normal force"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Gravity",
+          "rationale": "Gravity acts at a distance without contact."
+        },
+        {
+          "id": "physics-8",
+          "topic": "Mechanics",
+          "subTopic": "Mechanics",
+          "difficulty": "Easy",
+          "text": "Which quantity is the rate of change of displacement?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Velocity"
+            },
+            {
+              "label": "B",
+              "text": "Acceleration"
+            },
+            {
+              "label": "C",
+              "text": "Speed"
+            },
+            {
+              "label": "D",
+              "text": "Momentum"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Velocity",
+          "rationale": "Velocity is the rate of change of displacement."
+        },
+        {
+          "id": "physics-9",
+          "topic": "Mechanics",
+          "subTopic": "Mechanics",
+          "difficulty": "Medium",
+          "text": "A body moving in a circle at constant speed has:",
+          "options": [
+            {
+              "label": "A",
+              "text": "Changing velocity"
+            },
+            {
+              "label": "B",
+              "text": "Constant velocity"
+            },
+            {
+              "label": "C",
+              "text": "No acceleration"
+            },
+            {
+              "label": "D",
+              "text": "Zero momentum"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Changing velocity",
+          "rationale": "Direction changes continuously, so velocity changes."
+        },
+        {
+          "id": "physics-10",
+          "topic": "Heat and Thermodynamics",
+          "subTopic": "Heat",
+          "difficulty": "Medium",
+          "text": "Which law relates to the entropy of an isolated system?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Second law of thermodynamics"
+            },
+            {
+              "label": "B",
+              "text": "First law"
+            },
+            {
+              "label": "C",
+              "text": "Zeroth law"
+            },
+            {
+              "label": "D",
+              "text": "Stefan-Boltzmann law"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Second law of thermodynamics",
+          "rationale": "The second law states entropy of an isolated system increases."
+        },
+        {
+          "id": "physics-11",
+          "topic": "Waves and Optics",
+          "subTopic": "Waves",
+          "difficulty": "Medium",
+          "text": "Which phenomenon explains the formation of a rainbow?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Dispersion"
+            },
+            {
+              "label": "B",
+              "text": "Reflection"
+            },
+            {
+              "label": "C",
+              "text": "Refraction"
+            },
+            {
+              "label": "D",
+              "text": "Scattering"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Dispersion",
+          "rationale": "Dispersion splits white light into colors."
+        },
+        {
+          "id": "physics-12",
+          "topic": "Mechanics",
+          "subTopic": "Mechanics",
+          "difficulty": "Hard",
+          "text": "What is the momentum of a 2 kg object moving at 3 m/s?",
+          "options": [
+            {
+              "label": "A",
+              "text": "6 kg·m/s"
+            },
+            {
+              "label": "B",
+              "text": "5 kg·m/s"
+            },
+            {
+              "label": "C",
+              "text": "1.5 kg·m/s"
+            },
+            {
+              "label": "D",
+              "text": "9 kg·m/s"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "6 kg·m/s",
+          "rationale": "Momentum p = mv = 2 × 3 = 6 kg·m/s."
+        },
+        {
+          "id": "physics-13",
+          "topic": "Mechanics",
+          "subTopic": "Mechanics",
+          "difficulty": "Hard",
+          "text": "What is the kinetic energy of a 4 kg object moving at 5 m/s?",
+          "options": [
+            {
+              "label": "A",
+              "text": "50 J"
+            },
+            {
+              "label": "B",
+              "text": "20 J"
+            },
+            {
+              "label": "C",
+              "text": "100 J"
+            },
+            {
+              "label": "D",
+              "text": "25 J"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "50 J",
+          "rationale": "KE = ½mv² = ½ × 4 × 25 = 50 J."
+        },
+        {
+          "id": "physics-14",
+          "topic": "Waves and Optics",
+          "subTopic": "Waves",
+          "difficulty": "Hard",
+          "text": "Which lens is used to correct myopia (nearsightedness)?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Concave lens"
+            },
+            {
+              "label": "B",
+              "text": "Convex lens"
+            },
+            {
+              "label": "C",
+              "text": "Cylindrical lens"
+            },
+            {
+              "label": "D",
+              "text": "Bifocal lens"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Concave lens",
+          "rationale": "Concave lenses diverge light to correct myopia."
+        },
+        {
+          "id": "physics-15",
+          "topic": "Current Electricity and Magnetism",
+          "subTopic": "Electricity",
+          "difficulty": "Hard",
+          "text": "What is the total resistance of two 6 Ω resistors connected in parallel?",
+          "options": [
+            {
+              "label": "A",
+              "text": "3 Ω"
+            },
+            {
+              "label": "B",
+              "text": "6 Ω"
+            },
+            {
+              "label": "C",
+              "text": "12 Ω"
+            },
+            {
+              "label": "D",
+              "text": "1.5 Ω"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "3 Ω",
+          "rationale": "1/R = 1/6 + 1/6 = 2/6, so R = 3 Ω."
+        },
+        {
+          "id": "physics-16",
+          "topic": "Electrostatics and Capacitors",
+          "subTopic": "Electrostatics",
+          "difficulty": "Hard",
+          "text": "What is the capacitance of a capacitor storing 10 C at 5 V?",
+          "options": [
+            {
+              "label": "A",
+              "text": "2 F"
+            },
+            {
+              "label": "B",
+              "text": "50 F"
+            },
+            {
+              "label": "C",
+              "text": "0.5 F"
+            },
+            {
+              "label": "D",
+              "text": "15 F"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "2 F",
+          "rationale": "C = Q/V = 10/5 = 2 F."
+        }
+      ]
+    },
+    "mentalAgility": {
+      "label": "Mental Agility Test",
+      "balance": {
+        "Easy": 8,
+        "Medium": 6,
+        "Hard": 10,
+        "total": 24
+      },
+      "questions": [
+        {
+          "id": "mentalAgility-1",
+          "topic": "Verbal Reasoning",
+          "subTopic": "Verbal",
+          "difficulty": "Easy",
+          "text": "What is the antonym of \"abundant\"?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Scarce"
+            },
+            {
+              "label": "B",
+              "text": "Plentiful"
+            },
+            {
+              "label": "C",
+              "text": "Ample"
+            },
+            {
+              "label": "D",
+              "text": "Copious"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Scarce",
+          "rationale": "Scarce is the opposite of abundant."
+        },
+        {
+          "id": "mentalAgility-2",
+          "topic": "Verbal Reasoning",
+          "subTopic": "Verbal",
+          "difficulty": "Easy",
+          "text": "What is the synonym of \"rapid\"?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Quick"
+            },
+            {
+              "label": "B",
+              "text": "Slow"
+            },
+            {
+              "label": "C",
+              "text": "Lethargic"
+            },
+            {
+              "label": "D",
+              "text": "Gradual"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Quick",
+          "rationale": "Rapid means quick or fast."
+        },
+        {
+          "id": "mentalAgility-3",
+          "topic": "Verbal Reasoning",
+          "subTopic": "Verbal",
+          "difficulty": "Easy",
+          "text": "Choose the word closest in meaning to \"benevolent\".",
+          "options": [
+            {
+              "label": "A",
+              "text": "Kind"
+            },
+            {
+              "label": "B",
+              "text": "Hostile"
+            },
+            {
+              "label": "C",
+              "text": "Greedy"
+            },
+            {
+              "label": "D",
+              "text": "Angry"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Kind",
+          "rationale": "Benevolent means kind and well-meaning."
+        },
+        {
+          "id": "mentalAgility-4",
+          "topic": "Numerical Reasoning",
+          "subTopic": "Numerical",
+          "difficulty": "Easy",
+          "text": "What is the next number in the series: 3, 6, 9, 12, ___?",
+          "options": [
+            {
+              "label": "A",
+              "text": "15"
+            },
+            {
+              "label": "B",
+              "text": "14"
+            },
+            {
+              "label": "C",
+              "text": "13"
+            },
+            {
+              "label": "D",
+              "text": "18"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "15",
+          "rationale": "The series increases by 3 each time."
+        },
+        {
+          "id": "mentalAgility-5",
+          "topic": "Spatial Reasoning",
+          "subTopic": "Spatial",
+          "difficulty": "Easy",
+          "text": "How many faces does a cube have?",
+          "options": [
+            {
+              "label": "A",
+              "text": "6"
+            },
+            {
+              "label": "B",
+              "text": "4"
+            },
+            {
+              "label": "C",
+              "text": "8"
+            },
+            {
+              "label": "D",
+              "text": "12"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "6",
+          "rationale": "A cube has 6 faces."
+        },
+        {
+          "id": "mentalAgility-6",
+          "topic": "Spatial Reasoning",
+          "subTopic": "Spatial",
+          "difficulty": "Easy",
+          "text": "How many edges does a tetrahedron have?",
+          "options": [
+            {
+              "label": "A",
+              "text": "6"
+            },
+            {
+              "label": "B",
+              "text": "4"
+            },
+            {
+              "label": "C",
+              "text": "8"
+            },
+            {
+              "label": "D",
+              "text": "12"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "6",
+          "rationale": "A tetrahedron has 6 edges."
+        },
+        {
+          "id": "mentalAgility-7",
+          "topic": "Spatial Reasoning",
+          "subTopic": "Spatial",
+          "difficulty": "Easy",
+          "text": "How many vertices does a cube have?",
+          "options": [
+            {
+              "label": "A",
+              "text": "8"
+            },
+            {
+              "label": "B",
+              "text": "6"
+            },
+            {
+              "label": "C",
+              "text": "12"
+            },
+            {
+              "label": "D",
+              "text": "4"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "8",
+          "rationale": "A cube has 8 vertices (corners)."
+        },
+        {
+          "id": "mentalAgility-8",
+          "topic": "Spatial Reasoning",
+          "subTopic": "Spatial",
+          "difficulty": "Easy",
+          "text": "How many faces does a tetrahedron have?",
+          "options": [
+            {
+              "label": "A",
+              "text": "4"
+            },
+            {
+              "label": "B",
+              "text": "6"
+            },
+            {
+              "label": "C",
+              "text": "8"
+            },
+            {
+              "label": "D",
+              "text": "12"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "4",
+          "rationale": "A tetrahedron has 4 triangular faces."
+        },
+        {
+          "id": "mentalAgility-9",
+          "topic": "Verbal Reasoning",
+          "subTopic": "Verbal",
+          "difficulty": "Medium",
+          "text": "Complete the analogy: Doctor : Hospital :: Teacher : ___",
+          "options": [
+            {
+              "label": "A",
+              "text": "School"
+            },
+            {
+              "label": "B",
+              "text": "Hospital"
+            },
+            {
+              "label": "C",
+              "text": "Court"
+            },
+            {
+              "label": "D",
+              "text": "Bank"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "School",
+          "rationale": "A doctor works in a hospital; a teacher works in a school."
+        },
+        {
+          "id": "mentalAgility-10",
+          "topic": "Verbal Reasoning",
+          "subTopic": "Verbal",
+          "difficulty": "Medium",
+          "text": "Which word does not belong to the group?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Rose"
+            },
+            {
+              "label": "B",
+              "text": "Lotus"
+            },
+            {
+              "label": "C",
+              "text": "Mango"
+            },
+            {
+              "label": "D",
+              "text": "Lily"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Rose",
+          "rationale": "Mango is a fruit; the others are flowers."
+        },
+        {
+          "id": "mentalAgility-11",
+          "topic": "Logical Sequencing",
+          "subTopic": "Logical",
+          "difficulty": "Medium",
+          "text": "If A > B and B > C, then which is true?",
+          "options": [
+            {
+              "label": "A",
+              "text": "A > C"
+            },
+            {
+              "label": "B",
+              "text": "C > A"
+            },
+            {
+              "label": "C",
+              "text": "A = C"
+            },
+            {
+              "label": "D",
+              "text": "B > A"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "A > C",
+          "rationale": "By transitivity, A > C."
+        },
+        {
+          "id": "mentalAgility-12",
+          "topic": "Logical Sequencing",
+          "subTopic": "Logical",
+          "difficulty": "Medium",
+          "text": "All roses are flowers. Some flowers are red. Therefore:",
+          "options": [
+            {
+              "label": "A",
+              "text": "Some roses may be red"
+            },
+            {
+              "label": "B",
+              "text": "All roses are red"
+            },
+            {
+              "label": "C",
+              "text": "No rose is red"
+            },
+            {
+              "label": "D",
+              "text": "Roses are not flowers"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Some roses may be red",
+          "rationale": "From the premises, some roses may be red is a valid possibility."
+        },
+        {
+          "id": "mentalAgility-13",
+          "topic": "Logical Sequencing",
+          "subTopic": "Logical",
+          "difficulty": "Medium",
+          "text": "All A are B. All B are C. Therefore:",
+          "options": [
+            {
+              "label": "A",
+              "text": "All A are C"
+            },
+            {
+              "label": "B",
+              "text": "Some A are C"
+            },
+            {
+              "label": "C",
+              "text": "No A are C"
+            },
+            {
+              "label": "D",
+              "text": "Some C are not A"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "All A are C",
+          "rationale": "By transitivity, if A ⊂ B and B ⊂ C, then A ⊂ C."
+        },
+        {
+          "id": "mentalAgility-14",
+          "topic": "Logical Sequencing",
+          "subTopic": "Logical",
+          "difficulty": "Medium",
+          "text": "No A are B. Some B are C. Therefore:",
+          "options": [
+            {
+              "label": "A",
+              "text": "Some C may be A"
+            },
+            {
+              "label": "B",
+              "text": "All C are A"
+            },
+            {
+              "label": "C",
+              "text": "No C are A"
+            },
+            {
+              "label": "D",
+              "text": "Some C are not B"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Some C may be A",
+          "rationale": "No definite conclusion about A and C can be drawn; some C may be A is possible."
+        },
+        {
+          "id": "mentalAgility-15",
+          "topic": "Verbal Reasoning",
+          "subTopic": "Verbal",
+          "difficulty": "Hard",
+          "text": "If \"CAT\" is coded as \"3120\", which coding pattern is used?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Alphabet position"
+            },
+            {
+              "label": "B",
+              "text": "Reverse alphabet"
+            },
+            {
+              "label": "C",
+              "text": "Binary code"
+            },
+            {
+              "label": "D",
+              "text": "ASCII code"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Alphabet position",
+          "rationale": "C=3, A=1, T=20 matches alphabet positions."
+        },
+        {
+          "id": "mentalAgility-16",
+          "topic": "Numerical Reasoning",
+          "subTopic": "Numerical",
+          "difficulty": "Hard",
+          "text": "What is 15% of 200?",
+          "options": [
+            {
+              "label": "A",
+              "text": "30"
+            },
+            {
+              "label": "B",
+              "text": "25"
+            },
+            {
+              "label": "C",
+              "text": "35"
+            },
+            {
+              "label": "D",
+              "text": "20"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "30",
+          "rationale": "0.15 × 200 = 30."
+        },
+        {
+          "id": "mentalAgility-17",
+          "topic": "Numerical Reasoning",
+          "subTopic": "Numerical",
+          "difficulty": "Hard",
+          "text": "What is the average of 10, 20 and 30?",
+          "options": [
+            {
+              "label": "A",
+              "text": "20"
+            },
+            {
+              "label": "B",
+              "text": "15"
+            },
+            {
+              "label": "C",
+              "text": "25"
+            },
+            {
+              "label": "D",
+              "text": "30"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "20",
+          "rationale": "Sum = 60, divided by 3 = 20."
+        },
+        {
+          "id": "mentalAgility-18",
+          "topic": "Numerical Reasoning",
+          "subTopic": "Numerical",
+          "difficulty": "Hard",
+          "text": "If a shirt costs Rs. 500 and is discounted 20%, what is the sale price?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Rs. 400"
+            },
+            {
+              "label": "B",
+              "text": "Rs. 300"
+            },
+            {
+              "label": "C",
+              "text": "Rs. 450"
+            },
+            {
+              "label": "D",
+              "text": "Rs. 350"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Rs. 400",
+          "rationale": "20% of 500 = 100; 500 - 100 = 400."
+        },
+        {
+          "id": "mentalAgility-19",
+          "topic": "Numerical Reasoning",
+          "subTopic": "Numerical",
+          "difficulty": "Hard",
+          "text": "The length and breadth of a rectangle are increased by 15% and 25% respectively. What is the percentage increase in area?",
+          "options": [
+            {
+              "label": "A",
+              "text": "44%"
+            },
+            {
+              "label": "B",
+              "text": "40%"
+            },
+            {
+              "label": "C",
+              "text": "30%"
+            },
+            {
+              "label": "D",
+              "text": "20%"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "44%",
+          "rationale": "New area = 1.15 × 1.25 = 1.4375, so 43.75% ≈ 44%."
+        },
+        {
+          "id": "mentalAgility-20",
+          "topic": "Numerical Reasoning",
+          "subTopic": "Numerical",
+          "difficulty": "Hard",
+          "text": "What is 20% of 150?",
+          "options": [
+            {
+              "label": "A",
+              "text": "30"
+            },
+            {
+              "label": "B",
+              "text": "25"
+            },
+            {
+              "label": "C",
+              "text": "35"
+            },
+            {
+              "label": "D",
+              "text": "20"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "30",
+          "rationale": "0.20 × 150 = 30."
+        },
+        {
+          "id": "mentalAgility-21",
+          "topic": "Logical Sequencing",
+          "subTopic": "Logical",
+          "difficulty": "Hard",
+          "text": "Which shape completes the pattern: circle, square, triangle, circle, square, ___?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Triangle"
+            },
+            {
+              "label": "B",
+              "text": "Circle"
+            },
+            {
+              "label": "C",
+              "text": "Square"
+            },
+            {
+              "label": "D",
+              "text": "Rectangle"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Triangle",
+          "rationale": "The pattern repeats every three shapes."
+        },
+        {
+          "id": "mentalAgility-22",
+          "topic": "Logical Sequencing",
+          "subTopic": "Logical",
+          "difficulty": "Hard",
+          "text": "Look at this series: 53, 53, 40, 40, 27, 27, ___? Which number comes next?",
+          "options": [
+            {
+              "label": "A",
+              "text": "14"
+            },
+            {
+              "label": "B",
+              "text": "12"
+            },
+            {
+              "label": "C",
+              "text": "27"
+            },
+            {
+              "label": "D",
+              "text": "53"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "14",
+          "rationale": "The series subtracts 13 after each pair: 53, 53, 40, 40, 27, 27, 14."
+        },
+        {
+          "id": "mentalAgility-23",
+          "topic": "Spatial Reasoning",
+          "subTopic": "Spatial",
+          "difficulty": "Hard",
+          "text": "If a square is rotated 45°, its outline most resembles a:",
+          "options": [
+            {
+              "label": "A",
+              "text": "Diamond"
+            },
+            {
+              "label": "B",
+              "text": "Circle"
+            },
+            {
+              "label": "C",
+              "text": "Triangle"
+            },
+            {
+              "label": "D",
+              "text": "Rectangle"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Diamond",
+          "rationale": "A rotated square becomes diamond-shaped."
+        },
+        {
+          "id": "mentalAgility-24",
+          "topic": "Spatial Reasoning",
+          "subTopic": "Spatial",
+          "difficulty": "Hard",
+          "text": "Which 3D shape can be made from a net of 6 equal squares?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Cube"
+            },
+            {
+              "label": "B",
+              "text": "Cylinder"
+            },
+            {
+              "label": "C",
+              "text": "Cone"
+            },
+            {
+              "label": "D",
+              "text": "Sphere"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Cube",
+          "rationale": "Six equal squares form a cube."
+        }
+      ]
+    },
+    "health": {
+      "label": "Public Health (BPH)",
+      "balance": {
+        "Easy": 5,
+        "Medium": 4,
+        "Hard": 1,
+        "total": 10
+      },
+      "questions": [
+        {
+          "id": "health-1",
+          "topic": "Determinants of Health",
+          "subTopic": "Health",
+          "difficulty": "Easy",
+          "text": "Which of the following is a social determinant of health?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Income and education"
+            },
+            {
+              "label": "B",
+              "text": "Blood pressure"
+            },
+            {
+              "label": "C",
+              "text": "Heart rate"
+            },
+            {
+              "label": "D",
+              "text": "Body temperature"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Income and education",
+          "rationale": "Income and education are social determinants of health."
+        },
+        {
+          "id": "health-2",
+          "topic": "Determinants of Health",
+          "subTopic": "Health",
+          "difficulty": "Easy",
+          "text": "Which definition of health includes physical, mental and social well-being?",
+          "options": [
+            {
+              "label": "A",
+              "text": "WHO definition"
+            },
+            {
+              "label": "B",
+              "text": "Biomedical definition"
+            },
+            {
+              "label": "C",
+              "text": "Ecological definition"
+            },
+            {
+              "label": "D",
+              "text": "Holistic definition"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "WHO definition",
+          "rationale": "The WHO defines health as complete physical, mental and social well-being."
+        },
+        {
+          "id": "health-3",
+          "topic": "Determinants of Health",
+          "subTopic": "Health",
+          "difficulty": "Easy",
+          "text": "Which factor is a behavioral determinant of health?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Smoking"
+            },
+            {
+              "label": "B",
+              "text": "Genetics"
+            },
+            {
+              "label": "C",
+              "text": "Climate"
+            },
+            {
+              "label": "D",
+              "text": "Housing"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Smoking",
+          "rationale": "Smoking is a behavioral determinant of health."
+        },
+        {
+          "id": "health-4",
+          "topic": "Determinants of Health",
+          "subTopic": "Health",
+          "difficulty": "Easy",
+          "text": "Which of the following is an environmental determinant of health?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Air pollution"
+            },
+            {
+              "label": "B",
+              "text": "Age"
+            },
+            {
+              "label": "C",
+              "text": "Gender"
+            },
+            {
+              "label": "D",
+              "text": "Genetics"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Air pollution",
+          "rationale": "Air pollution is an environmental determinant of health."
+        },
+        {
+          "id": "health-5",
+          "topic": "Determinants of Health",
+          "subTopic": "Health",
+          "difficulty": "Easy",
+          "text": "Which of the following is a biological determinant of health?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Age and sex"
+            },
+            {
+              "label": "B",
+              "text": "Income"
+            },
+            {
+              "label": "C",
+              "text": "Education"
+            },
+            {
+              "label": "D",
+              "text": "Occupation"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Age and sex",
+          "rationale": "Age and sex are biological determinants of health."
+        },
+        {
+          "id": "health-6",
+          "topic": "Determinants of Health",
+          "subTopic": "Health",
+          "difficulty": "Medium",
+          "text": "Which level of disease prevention aims to halt the progression of disease at an early stage?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Secondary prevention"
+            },
+            {
+              "label": "B",
+              "text": "Primary prevention"
+            },
+            {
+              "label": "C",
+              "text": "Tertiary prevention"
+            },
+            {
+              "label": "D",
+              "text": "Primordial prevention"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Secondary prevention",
+          "rationale": "Secondary prevention detects and treats disease early."
+        },
+        {
+          "id": "health-7",
+          "topic": "Non-communicable Diseases",
+          "subTopic": "Health",
+          "difficulty": "Medium",
+          "text": "Which of the following is a modifiable risk factor for non-communicable diseases?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Tobacco use"
+            },
+            {
+              "label": "B",
+              "text": "Age"
+            },
+            {
+              "label": "C",
+              "text": "Gender"
+            },
+            {
+              "label": "D",
+              "text": "Genetics"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Tobacco use",
+          "rationale": "Tobacco use is a modifiable risk factor."
+        },
+        {
+          "id": "health-8",
+          "topic": "WASH",
+          "subTopic": "Health",
+          "difficulty": "Medium",
+          "text": "Which disease is most commonly associated with poor sanitation?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Diarrheal diseases"
+            },
+            {
+              "label": "B",
+              "text": "Diabetes"
+            },
+            {
+              "label": "C",
+              "text": "Hypertension"
+            },
+            {
+              "label": "D",
+              "text": "Asthma"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Diarrheal diseases",
+          "rationale": "Poor sanitation is linked to diarrheal diseases."
+        },
+        {
+          "id": "health-9",
+          "topic": "Biostatistics and Epidemiology",
+          "subTopic": "Health",
+          "difficulty": "Medium",
+          "text": "Which study design is best for establishing causality?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Randomized controlled trial"
+            },
+            {
+              "label": "B",
+              "text": "Cross-sectional study"
+            },
+            {
+              "label": "C",
+              "text": "Case report"
+            },
+            {
+              "label": "D",
+              "text": "Ecological study"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Randomized controlled trial",
+          "rationale": "RCTs are the gold standard for establishing causality."
+        },
+        {
+          "id": "health-10",
+          "topic": "Biostatistics and Epidemiology",
+          "subTopic": "Health",
+          "difficulty": "Hard",
+          "text": "What is the mean of the numbers 4, 6, 8, 10 and 12?",
+          "options": [
+            {
+              "label": "A",
+              "text": "8"
+            },
+            {
+              "label": "B",
+              "text": "6"
+            },
+            {
+              "label": "C",
+              "text": "10"
+            },
+            {
+              "label": "D",
+              "text": "12"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "8",
+          "rationale": "Sum = 40, divided by 5 = 8."
+        }
+      ]
+    },
+    "nursing": {
+      "label": "Nursing (BNS/BMS)",
+      "balance": {
+        "Easy": 15,
+        "Medium": 6,
+        "Hard": 9,
+        "total": 30
+      },
+      "questions": [
+        {
+          "id": "nursing-1",
+          "topic": "Community Health Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Easy",
+          "text": "Which level of health care is provided at the village level in Nepal?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Primary health care"
+            },
+            {
+              "label": "B",
+              "text": "Secondary health care"
+            },
+            {
+              "label": "C",
+              "text": "Tertiary health care"
+            },
+            {
+              "label": "D",
+              "text": "Quaternary health care"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Primary health care",
+          "rationale": "Primary health care is provided at the village/community level."
+        },
+        {
+          "id": "nursing-2",
+          "topic": "Community Health Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Easy",
+          "text": "Which program in Nepal focuses on immunization of children?",
+          "options": [
+            {
+              "label": "A",
+              "text": "National Immunization Program"
+            },
+            {
+              "label": "B",
+              "text": "Safe Motherhood Program"
+            },
+            {
+              "label": "C",
+              "text": "Nutrition Program"
+            },
+            {
+              "label": "D",
+              "text": "School Health Program"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "National Immunization Program",
+          "rationale": "The National Immunization Program covers childhood vaccines."
+        },
+        {
+          "id": "nursing-3",
+          "topic": "Community Health Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Easy",
+          "text": "Which vaccine is given at birth in Nepal?",
+          "options": [
+            {
+              "label": "A",
+              "text": "BCG and OPV"
+            },
+            {
+              "label": "B",
+              "text": "MMR"
+            },
+            {
+              "label": "C",
+              "text": "DPT"
+            },
+            {
+              "label": "D",
+              "text": "Hepatitis B"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "BCG and OPV",
+          "rationale": "BCG and OPV are given at birth."
+        },
+        {
+          "id": "nursing-4",
+          "topic": "Community Health Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Easy",
+          "text": "Which is the primary role of a community health nurse?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Health promotion and prevention"
+            },
+            {
+              "label": "B",
+              "text": "Surgery"
+            },
+            {
+              "label": "C",
+              "text": "Prescribing drugs"
+            },
+            {
+              "label": "D",
+              "text": "Laboratory testing"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Health promotion and prevention",
+          "rationale": "Community health nurses focus on health promotion and prevention."
+        },
+        {
+          "id": "nursing-5",
+          "topic": "Community Health Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Easy",
+          "text": "Which method is used to assess the health status of a community?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Community health survey"
+            },
+            {
+              "label": "B",
+              "text": "Blood test only"
+            },
+            {
+              "label": "C",
+              "text": "X-ray only"
+            },
+            {
+              "label": "D",
+              "text": "Surgery"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Community health survey",
+          "rationale": "Community health surveys assess community health status."
+        },
+        {
+          "id": "nursing-6",
+          "topic": "Adult Health Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Easy",
+          "text": "Which vital sign is most important to monitor in a patient with hypertension?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Blood pressure"
+            },
+            {
+              "label": "B",
+              "text": "Temperature"
+            },
+            {
+              "label": "C",
+              "text": "Pulse"
+            },
+            {
+              "label": "D",
+              "text": "Respiration"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Blood pressure",
+          "rationale": "Blood pressure is the key vital sign in hypertension."
+        },
+        {
+          "id": "nursing-7",
+          "topic": "Adult Health Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Easy",
+          "text": "Which condition is characterized by elevated blood glucose levels?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Diabetes mellitus"
+            },
+            {
+              "label": "B",
+              "text": "Hypertension"
+            },
+            {
+              "label": "C",
+              "text": "Asthma"
+            },
+            {
+              "label": "D",
+              "text": "Anemia"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Diabetes mellitus",
+          "rationale": "Diabetes mellitus is characterized by hyperglycemia."
+        },
+        {
+          "id": "nursing-8",
+          "topic": "Adult Health Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Easy",
+          "text": "Which medication is commonly used to treat hypertension?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Amlodipine"
+            },
+            {
+              "label": "B",
+              "text": "Paracetamol"
+            },
+            {
+              "label": "C",
+              "text": "Ibuprofen"
+            },
+            {
+              "label": "D",
+              "text": "Amoxicillin"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Amlodipine",
+          "rationale": "Amlodipine is a calcium channel blocker used for hypertension."
+        },
+        {
+          "id": "nursing-9",
+          "topic": "Child Health Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Easy",
+          "text": "Which vaccine protects against measles?",
+          "options": [
+            {
+              "label": "A",
+              "text": "MMR vaccine"
+            },
+            {
+              "label": "B",
+              "text": "BCG vaccine"
+            },
+            {
+              "label": "C",
+              "text": "OPV vaccine"
+            },
+            {
+              "label": "D",
+              "text": "DPT vaccine"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "MMR vaccine",
+          "rationale": "MMR protects against measles, mumps and rubella."
+        },
+        {
+          "id": "nursing-10",
+          "topic": "Child Health Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Easy",
+          "text": "Which is a common sign of dehydration in a child with diarrhea?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Sunken eyes"
+            },
+            {
+              "label": "B",
+              "text": "Increased urination"
+            },
+            {
+              "label": "C",
+              "text": "Moist skin"
+            },
+            {
+              "label": "D",
+              "text": "Normal fontanelle"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Sunken eyes",
+          "rationale": "Sunken eyes are a sign of dehydration in children."
+        },
+        {
+          "id": "nursing-11",
+          "topic": "Child Health Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Easy",
+          "text": "Which growth parameter is most commonly used to assess child nutrition?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Weight for age"
+            },
+            {
+              "label": "B",
+              "text": "Blood pressure"
+            },
+            {
+              "label": "C",
+              "text": "Pulse rate"
+            },
+            {
+              "label": "D",
+              "text": "Temperature"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Weight for age",
+          "rationale": "Weight for age is a key nutritional indicator."
+        },
+        {
+          "id": "nursing-12",
+          "topic": "Child Health Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Easy",
+          "text": "Which vitamin deficiency causes rickets in children?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Vitamin D"
+            },
+            {
+              "label": "B",
+              "text": "Vitamin A"
+            },
+            {
+              "label": "C",
+              "text": "Vitamin C"
+            },
+            {
+              "label": "D",
+              "text": "Vitamin B12"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Vitamin D",
+          "rationale": "Vitamin D deficiency causes rickets."
+        },
+        {
+          "id": "nursing-13",
+          "topic": "Child Health Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Easy",
+          "text": "Which is the most common cause of pneumonia in children under 5 years?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Streptococcus pneumoniae"
+            },
+            {
+              "label": "B",
+              "text": "E. coli"
+            },
+            {
+              "label": "C",
+              "text": "Salmonella"
+            },
+            {
+              "label": "D",
+              "text": "Candida"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Streptococcus pneumoniae",
+          "rationale": "S. pneumoniae is a leading cause of childhood pneumonia."
+        },
+        {
+          "id": "nursing-14",
+          "topic": "Midwifery and Gynecological Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Easy",
+          "text": "What is the normal duration of pregnancy in humans?",
+          "options": [
+            {
+              "label": "A",
+              "text": "40 weeks"
+            },
+            {
+              "label": "B",
+              "text": "30 weeks"
+            },
+            {
+              "label": "C",
+              "text": "50 weeks"
+            },
+            {
+              "label": "D",
+              "text": "20 weeks"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "40 weeks",
+          "rationale": "Normal pregnancy lasts about 40 weeks."
+        },
+        {
+          "id": "nursing-15",
+          "topic": "Midwifery and Gynecological Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Easy",
+          "text": "Which stage of labor involves the delivery of the baby?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Second stage"
+            },
+            {
+              "label": "B",
+              "text": "First stage"
+            },
+            {
+              "label": "C",
+              "text": "Third stage"
+            },
+            {
+              "label": "D",
+              "text": "Fourth stage"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Second stage",
+          "rationale": "The second stage of labor delivers the baby."
+        },
+        {
+          "id": "nursing-16",
+          "topic": "Community Health Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Medium",
+          "text": "Which of the following is a home visit purpose in community health nursing?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Health assessment and follow-up"
+            },
+            {
+              "label": "B",
+              "text": "Performing surgery"
+            },
+            {
+              "label": "C",
+              "text": "Dispensing all drugs"
+            },
+            {
+              "label": "D",
+              "text": "Collecting taxes"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Health assessment and follow-up",
+          "rationale": "Home visits allow health assessment and follow-up care."
+        },
+        {
+          "id": "nursing-17",
+          "topic": "Adult Health Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Medium",
+          "text": "Which assessment finding indicates dehydration in an adult?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Decreased skin turgor"
+            },
+            {
+              "label": "B",
+              "text": "Increased urine output"
+            },
+            {
+              "label": "C",
+              "text": "Moist mucous membranes"
+            },
+            {
+              "label": "D",
+              "text": "Normal blood pressure"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Decreased skin turgor",
+          "rationale": "Decreased skin turgor is a sign of dehydration."
+        },
+        {
+          "id": "nursing-18",
+          "topic": "Leadership and Management",
+          "subTopic": "Nursing",
+          "difficulty": "Medium",
+          "text": "Which is a key characteristic of a transformational leader?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Inspires and motivates followers"
+            },
+            {
+              "label": "B",
+              "text": "Avoids decisions"
+            },
+            {
+              "label": "C",
+              "text": "Controls everything"
+            },
+            {
+              "label": "D",
+              "text": "Works alone"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Inspires and motivates followers",
+          "rationale": "Transformational leaders inspire and motivate followers."
+        },
+        {
+          "id": "nursing-19",
+          "topic": "Behavioral Science and Mental Health",
+          "subTopic": "Nursing",
+          "difficulty": "Medium",
+          "text": "Which therapeutic communication technique encourages the patient to elaborate?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Open-ended questions"
+            },
+            {
+              "label": "B",
+              "text": "Closed questions"
+            },
+            {
+              "label": "C",
+              "text": "Silence"
+            },
+            {
+              "label": "D",
+              "text": "Advice giving"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Open-ended questions",
+          "rationale": "Open-ended questions encourage elaboration."
+        },
+        {
+          "id": "nursing-20",
+          "topic": "Community Health Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Medium",
+          "text": "Which is a sign of severe acute malnutrition in a child?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Severe wasting"
+            },
+            {
+              "label": "B",
+              "text": "Normal weight"
+            },
+            {
+              "label": "C",
+              "text": "Good appetite"
+            },
+            {
+              "label": "D",
+              "text": "Active behavior"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Severe wasting",
+          "rationale": "Severe wasting indicates severe acute malnutrition."
+        },
+        {
+          "id": "nursing-21",
+          "topic": "Adult Health Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Medium",
+          "text": "Which is a sign of internal bleeding?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Hypotension and tachycardia"
+            },
+            {
+              "label": "B",
+              "text": "Hypertension"
+            },
+            {
+              "label": "C",
+              "text": "Bradycardia"
+            },
+            {
+              "label": "D",
+              "text": "Normal vitals"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Hypotension and tachycardia",
+          "rationale": "Hypotension and tachycardia indicate internal bleeding."
+        },
+        {
+          "id": "nursing-22",
+          "topic": "Adult Health Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Hard",
+          "text": "Which position is most appropriate for a patient with difficulty breathing?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Fowler's position"
+            },
+            {
+              "label": "B",
+              "text": "Supine position"
+            },
+            {
+              "label": "C",
+              "text": "Prone position"
+            },
+            {
+              "label": "D",
+              "text": "Trendelenburg position"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Fowler's position",
+          "rationale": "Fowler's position eases breathing by opening the airway."
+        },
+        {
+          "id": "nursing-23",
+          "topic": "Adult Health Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Hard",
+          "text": "Which nursing intervention is priority for a patient with chest pain?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Administer oxygen and notify physician"
+            },
+            {
+              "label": "B",
+              "text": "Give a bath"
+            },
+            {
+              "label": "C",
+              "text": "Serve a meal"
+            },
+            {
+              "label": "D",
+              "text": "Change the bed"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Administer oxygen and notify physician",
+          "rationale": "Oxygen and physician notification are priority for chest pain."
+        },
+        {
+          "id": "nursing-24",
+          "topic": "Child Health Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Hard",
+          "text": "Which is the recommended treatment for a child with severe dehydration?",
+          "options": [
+            {
+              "label": "A",
+              "text": "IV fluids"
+            },
+            {
+              "label": "B",
+              "text": "Oral rehydration only"
+            },
+            {
+              "label": "C",
+              "text": "Antibiotics only"
+            },
+            {
+              "label": "D",
+              "text": "Antipyretics"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "IV fluids",
+          "rationale": "Severe dehydration requires IV fluid therapy."
+        },
+        {
+          "id": "nursing-25",
+          "topic": "Midwifery and Gynecological Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Hard",
+          "text": "Which is the recommended position for a newborn immediately after birth?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Skin-to-skin with mother"
+            },
+            {
+              "label": "B",
+              "text": "Prone alone"
+            },
+            {
+              "label": "C",
+              "text": "Supine alone"
+            },
+            {
+              "label": "D",
+              "text": "Trendelenburg"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Skin-to-skin with mother",
+          "rationale": "Skin-to-skin contact promotes bonding and thermoregulation."
+        },
+        {
+          "id": "nursing-26",
+          "topic": "Behavioral Science and Mental Health",
+          "subTopic": "Nursing",
+          "difficulty": "Hard",
+          "text": "Which is a priority nursing intervention for a suicidal patient?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Ensure safety and constant observation"
+            },
+            {
+              "label": "B",
+              "text": "Leave the patient alone"
+            },
+            {
+              "label": "C",
+              "text": "Ignore the patient"
+            },
+            {
+              "label": "D",
+              "text": "Give a bath"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Ensure safety and constant observation",
+          "rationale": "Safety and observation are priority for suicidal patients."
+        },
+        {
+          "id": "nursing-27",
+          "topic": "Community Health Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Hard",
+          "text": "Which is the correct method to prevent soil-transmitted helminth infection?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Wearing shoes"
+            },
+            {
+              "label": "B",
+              "text": "Eating raw food"
+            },
+            {
+              "label": "C",
+              "text": "Drinking untreated water"
+            },
+            {
+              "label": "D",
+              "text": "Avoiding soap"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Wearing shoes",
+          "rationale": "Wearing shoes prevents soil-transmitted helminth infection."
+        },
+        {
+          "id": "nursing-28",
+          "topic": "Adult Health Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Hard",
+          "text": "Which is the priority nursing action for a patient with anaphylaxis?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Administer epinephrine"
+            },
+            {
+              "label": "B",
+              "text": "Give a bath"
+            },
+            {
+              "label": "C",
+              "text": "Serve food"
+            },
+            {
+              "label": "D",
+              "text": "Change dressing"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Administer epinephrine",
+          "rationale": "Epinephrine is the priority treatment for anaphylaxis."
+        },
+        {
+          "id": "nursing-29",
+          "topic": "Adult Health Nursing",
+          "subTopic": "Nursing",
+          "difficulty": "Hard",
+          "text": "Which is the priority for a patient with a fractured femur?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Immobilize the limb"
+            },
+            {
+              "label": "B",
+              "text": "Give a bath"
+            },
+            {
+              "label": "C",
+              "text": "Serve food"
+            },
+            {
+              "label": "D",
+              "text": "Change dressing"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Immobilize the limb",
+          "rationale": "Immobilization prevents further injury."
+        },
+        {
+          "id": "nursing-30",
+          "topic": "Behavioral Science and Mental Health",
+          "subTopic": "Nursing",
+          "difficulty": "Hard",
+          "text": "Which is a priority nursing intervention for a patient with acute psychosis?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Ensure safety and administer antipsychotics"
+            },
+            {
+              "label": "B",
+              "text": "Leave the patient alone"
+            },
+            {
+              "label": "C",
+              "text": "Ignore the patient"
+            },
+            {
+              "label": "D",
+              "text": "Give a bath"
+            }
+          ],
+          "correctLabel": "A",
+          "correctText": "Ensure safety and administer antipsychotics",
+          "rationale": "Safety and antipsychotics are priority for acute psychosis."
+        }
+      ]
+    }
+  }
+}
