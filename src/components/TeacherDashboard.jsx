@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { api } from '../api';
 import Navbar from './Navbar';
-import { SYLLABUS_LABELS } from '../constants';
+import { SYLLABUS_LABELS, PROGRAM_GROUPS } from '../constants';
 
 export default function TeacherDashboard({ user, onLogout, navigate }) {
   const [sets, setSets] = useState([]);
@@ -82,12 +82,11 @@ export default function TeacherDashboard({ user, onLogout, navigate }) {
                 <form onSubmit={createSet} style={{ background: 'var(--light)', padding: 16, borderRadius: 8, marginBottom: 16 }}>
                   <label>Title</label>
                   <input value={newSet.title} onChange={(e) => setNewSet({ ...newSet, title: e.target.value })} placeholder="CEE Mock Set" />
-                  <label>Syllabus</label>
+                  <label>Program Group</label>
                   <select value={newSet.syllabus} onChange={(e) => setNewSet({ ...newSet, syllabus: e.target.value })}>
-                    <option value="ce_2025">CEE 2025 (MBBS/BDS/Nursing)</option>
-                    <option value="ce_2026">CEE 2026 (BAMS/MLT/BPT)</option>
-                    <option value="bph">BPH</option>
-                    <option value="bns">BNS</option>
+                    {PROGRAM_GROUPS.map(g => (
+                      <option key={g.key} value={g.key}>{g.label}: {g.title}</option>
+                    ))}
                   </select>
                   <label>Duration (minutes)</label>
                   <input type="number" value={newSet.duration} onChange={(e) => setNewSet({ ...newSet, duration: parseInt(e.target.value) || 180 })} />
@@ -97,24 +96,38 @@ export default function TeacherDashboard({ user, onLogout, navigate }) {
                   </div>
                 </form>
               )}
-              <table>
-                <thead><tr><th>Title</th><th>Status</th><th>Q</th><th>Actions</th></tr></thead>
-                <tbody>
-                  {sets.map(s => (
-                    <tr key={s.id}>
-                      <td>{s.title}<br /><span className="syllabus-tag">{SYLLABUS_LABELS[s.syllabus] || s.syllabus}</span></td>
-                      <td><span className={`badge badge-${s.status}`}>{s.status}</span></td>
-                      <td>{s.question_count || '—'}</td>
-                      <td style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
-                        <button className="btn btn-secondary btn-sm" onClick={() => viewSet(s.id)}>View</button>
-                        {s.status === 'draft' && <button className="btn btn-success btn-sm" onClick={() => releaseSet(s.id)}>Release</button>}
-                        {s.status === 'released' && <button className="btn btn-warning btn-sm" onClick={() => unreleaseSet(s.id)}>Unrelease</button>}
-                      </td>
-                    </tr>
-                  ))}
-                  {sets.length === 0 && <tr><td colSpan={4} className="muted">No question sets yet.</td></tr>}
-                </tbody>
-              </table>
+              {PROGRAM_GROUPS.map(group => {
+                const groupSets = sets.filter(s => s.syllabus === group.key);
+                if (groupSets.length === 0) return null;
+                return (
+                  <div key={group.key} style={{ marginBottom: 20 }}>
+                    <div className="flex-between" style={{ background: 'var(--light)', padding: '10px 14px', borderRadius: 8, marginBottom: 8 }}>
+                      <div>
+                        <strong>{group.icon} {group.label}: {group.title}</strong>
+                      </div>
+                      <span className="badge badge-blue">{groupSets.length} sets</span>
+                    </div>
+                    <table>
+                      <thead><tr><th>Title</th><th>Status</th><th>Q</th><th>Actions</th></tr></thead>
+                      <tbody>
+                        {groupSets.map(s => (
+                          <tr key={s.id}>
+                            <td>{s.title}<br /><span className="syllabus-tag">{SYLLABUS_LABELS[s.syllabus] || s.syllabus}</span></td>
+                            <td><span className={`badge badge-${s.status}`}>{s.status}</span></td>
+                            <td>{s.question_count || '—'}</td>
+                            <td style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+                              <button className="btn btn-secondary btn-sm" onClick={() => viewSet(s.id)}>View</button>
+                              {s.status === 'draft' && <button className="btn btn-success btn-sm" onClick={() => releaseSet(s.id)}>Release</button>}
+                              {s.status === 'released' && <button className="btn btn-warning btn-sm" onClick={() => unreleaseSet(s.id)}>Unrelease</button>}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                );
+              })}
+              {sets.length === 0 && <div className="muted">No question sets yet.</div>}
             </div>
           </div>
           <div className="col">

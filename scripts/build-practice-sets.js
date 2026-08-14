@@ -15,6 +15,7 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const { qBank } = require(path.join(ROOT, 'server', 'questionBank'));
 const gen = require(path.join(ROOT, 'server', 'generated-questions'));
+const genHard = require(path.join(ROOT, 'server', 'generated-hard'));
 
 const SET_ORDER = ['zoology', 'botany', 'chemistry', 'physics', 'mentalAgility', 'health', 'nursing'];
 const LABELS = ['A', 'B', 'C', 'D'];
@@ -50,6 +51,11 @@ for (const setName of SET_ORDER) {
     pool.push({ ...q, difficulty: LEVEL_TO_DIFF[q.level] || q.level, generated: !!q.generated });
   }
 }
+for (const setName of SET_ORDER) {
+  for (const q of (genHard[setName] || [])) {
+    pool.push({ ...q, difficulty: LEVEL_TO_DIFF[q.level] || q.level, generated: !!q.generated });
+  }
+}
 
 // De-duplicate the pool globally by normalized text so no question can appear
 // in more than one set (covers the 2 known cross-set duplicates in qBank).
@@ -72,14 +78,24 @@ for (const d of ['Easy', 'Medium', 'Hard']) byDiff[d] = shuffle(byDiff[d], rnd);
 
 console.log('Pool before dedup:', pool.length, '| duplicates removed:', poolDups, '| pool after dedup:', dedupedPool.length);
 
-// Per-set targets (Hard-dominant, Easy/Medium minimized). Totals:
-// Hard 201, Medium 76, Easy 395. Two sets of 200.
-const targets = [
-  { Hard: 100, Medium: 38, Easy: 62 },
-  { Hard: 101, Medium: 38, Easy: 61 }
-];
+// Dynamic per-set distribution: maximize Hard, then Medium, minimize Easy.
+// All available Hard and Medium questions are consumed first; only the small
+// remaining balance is filled with Easy so the Easy proportion is minimized.
 const totalNeed = NUM_SETS * SET_SIZE;
 const poolSize = pool.length;
+const avail = { Easy: byDiff.Easy.length, Medium: byDiff.Medium.length, Hard: byDiff.Hard.length };
+const targets = [];
+const baseHard = Math.floor(avail.Hard / NUM_SETS);
+let hardRemainder = avail.Hard - baseHard * NUM_SETS;
+const baseMedium = Math.floor(avail.Medium / NUM_SETS);
+let mediumRemainder = avail.Medium - baseMedium * NUM_SETS;
+for (let s = 0; s < NUM_SETS; s++) {
+  const hard = baseHard + (s < hardRemainder ? 1 : 0);
+  const medium = baseMedium + (s < mediumRemainder ? 1 : 0);
+  const easy = SET_SIZE - hard - medium;
+  targets.push({ Hard: hard, Medium: medium, Easy: easy });
+}
+console.log('Available by difficulty:', JSON.stringify(avail));
 if (poolSize < totalNeed) {
   console.error(`Pool too small: ${poolSize} < ${totalNeed}`);
   process.exit(1);
@@ -134,15 +150,27 @@ for (let s = 0; s < NUM_SETS; s++) {
   });
 }
 
-// Verify no overlap across sets (same question text never reused).
-const seen = new Set();
-let overlap = 0;
+// ---- Uniqueness audit (must be zero on both counts) ----
+// Intra-set: no duplicate question stem within a single set.
+// Inter-set: no question stem appears in more than one set.
+// Uses the same normalized key as the pool-level dedup.
+const norm = (t) => String(t).toLowerCase().replace(/[^a-z0-9]+/g, ' ').replace(/\s+/g, ' ').trim();
+let intraDup = 0;
+let interDup = 0;
+const globalSeen = new Set();
 for (const set of sets) {
+  const inSet = new Set();
   for (const q of set.questions) {
-    const key = q.text.trim().toLowerCase();
-    if (seen.has(key)) overlap++;
-    seen.add(key);
+    const k = norm(q.text);
+    if (inSet.has(k)) intraDup++;          // duplicate inside this set
+    inSet.add(k);
+    if (globalSeen.has(k)) interDup++;      // duplicate across sets
+    globalSeen.add(k);
   }
+}
+if (intraDup > 0 || interDup > 0) {
+  console.error(`UNIQUENESS FAILURE: intra-set=${intraDup}, inter-set=${interDup}`);
+  process.exit(1);
 }
 
 const out = {
@@ -207,7 +235,8 @@ fs.writeFileSync(path.join(ROOT, 'public', 'practice-sets.html'), html);
 
 console.log('Pool size:', poolSize);
 console.log('Sets built:', sets.length, '(' + SET_SIZE + ' each)');
-console.log('Cross-set overlaps:', overlap);
+console.log('Intra-set duplicates:', intraDup, '(must be 0)');
+console.log('Inter-set duplicates:', interDup, '(must be 0)');
 console.log('Distribution per set:', sets.map(s => JSON.stringify(s.distribution)).join(' | '));
 console.log('Generated questions used:', sets.reduce((a, s) => a + s.questions.filter(q => q.generated).length, 0));
 console.log('Wrote data/practice-sets.json and public/practice-sets.html');

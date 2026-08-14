@@ -160,10 +160,13 @@ async function main() {
 
   // ---------- Question Bank Access ----------
   const bank = {
-    biology: qBank.biology,
+    zoology: qBank.zoology,
+    botany: qBank.botany,
     chemistry: qBank.chemistry,
     physics: qBank.physics,
-    mental_agility: qBank.mentalAgility
+    mental_agility: qBank.mentalAgility,
+    health: qBank.health,
+    nursing: qBank.nursing
   };
 
   // Simple deterministic pseudo-random for stable seeds

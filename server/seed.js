@@ -32,158 +32,151 @@ console.log('  Teacher: teacher@cee.edu.np / teacher123');
 console.log('  Student: Kusum Lamichhane (student@cee.edu.np / student123)');
 console.log('  Admin:   admin@cee.edu.np / admin123');
 
-// ---------- Syllabus Definitions ----------
+// =====================================================================
+// SYLLABUS DEFINITIONS — exact weightage from the MEC syllabus (2026)
+// =====================================================================
+// Group I:  MBBS, BDS, BSc Nursing/BSc Midwifery, BASLP & B Perfusion Technology
+// Group II: BAMS, BSc MLT, BSc MIT/BSc Radiotherapy Technology, BPT, B Pharm & B Optometry
+// Group III: BPH (Bachelor in Public Health)
+// Group IV: BNS (Bachelor in Nursing Science)/BMS (Bachelor in Midwifery Science)
+// =====================================================================
+
+// Shared Zoology weightage (Groups I, II, III) — 40 questions
+const ZOOLOGY_40 = [
+  { chapter: 'Evolutionary Biology', marks: 3 },
+  { chapter: 'Animal Diversity and Classification', marks: 4 },
+  { chapter: 'Animal Tissues and Histology', marks: 4 },
+  { chapter: 'Study of Selected Animals', marks: 6 },
+  { chapter: 'Human Biology and Physiology', marks: 15 },
+  { chapter: 'Microbial Diseases and Immunology', marks: 4 },
+  { chapter: 'Medical Technology and Applied Biology', marks: 2 },
+  { chapter: 'Biota, Environment and Conservation', marks: 2 }
+];
+
+// Shared Botany weightage (Groups I, II, III) — 40 questions
+const BOTANY_40 = [
+  { chapter: 'Basic Components of Life', marks: 2 },
+  { chapter: 'Biodiversity', marks: 9 },
+  { chapter: 'Ecology and Vegetation', marks: 4 },
+  { chapter: 'Cell Biology', marks: 5 },
+  { chapter: 'Genetics', marks: 6 },
+  { chapter: 'Plant Anatomy', marks: 3 },
+  { chapter: 'Plant Physiology', marks: 6 },
+  { chapter: 'Developmental Botany', marks: 2 },
+  { chapter: 'Applied Botany', marks: 3 }
+];
+
+// Shared MAT weightage — 20 questions
+const MAT_20 = [
+  { chapter: 'Verbal Reasoning', marks: 5 },
+  { chapter: 'Numerical Reasoning', marks: 5 },
+  { chapter: 'Logical Sequencing', marks: 5 },
+  { chapter: 'Spatial Reasoning', marks: 5 }
+];
+
 const SYLLABI = {
   ce_2025: {
-    label: 'CEE MBBS/BDS/BSc Nursing/BASLP/B Perfusion Tech (2025)',
-    biology: {
-      zoology: [
-        { chapter: 'Evolution', marks: 4 },
-        { chapter: 'Classification', marks: 8 },
-        { chapter: 'Plasmodium/Earthworm/Frog', marks: 8 },
-        { chapter: 'Human Biology/Diseases', marks: 14 },
-        { chapter: 'Animal Tissues', marks: 4 },
-        { chapter: 'Environmental/Behavior', marks: 2 }
-      ],
-      botany: [
-        { chapter: 'Biodiversity', marks: 11 },
-        { chapter: 'Ecology', marks: 5 },
-        { chapter: 'Cell Biology/Genetics', marks: 12 },
-        { chapter: 'Anatomy/Physiology', marks: 7 },
-        { chapter: 'Applied Botany', marks: 5 }
-      ]
-    },
+    label: 'Group I: MBBS, BDS, BSc Nursing/BSc Midwifery, BASLP & B Perfusion Technology',
+    zoology: ZOOLOGY_40,
+    botany: BOTANY_40,
     chemistry: [
-      { chapter: 'General/Physical', marks: 18 },
-      { chapter: 'Inorganic', marks: 14 },
-      { chapter: 'Organic', marks: 18 }
+      { chapter: 'Physical Chemistry', marks: 17 },
+      { chapter: 'Inorganic Chemistry', marks: 10 },
+      { chapter: 'Organic Chemistry', marks: 17 },
+      { chapter: 'Applied Chemistry', marks: 3 },
+      { chapter: 'Analytical Chemistry', marks: 3 }
     ],
     physics: [
       { chapter: 'Mechanics', marks: 10 },
-      { chapter: 'Heat/Thermodynamics', marks: 6 },
-      { chapter: 'Optics', marks: 6 },
-      { chapter: 'Electricity/Magnetism', marks: 9 },
-      { chapter: 'Sound/Electrostatics', marks: 6 },
-      { chapter: 'Modern/Nuclear Physics', marks: 6 },
-      { chapter: 'Semiconductors', marks: 4 },
-      { chapter: 'Particle Physics/Universe', marks: 3 }
+      { chapter: 'Heat and Thermodynamics', marks: 7 },
+      { chapter: 'Waves and Optics', marks: 8 },
+      { chapter: 'Current Electricity and Magnetism', marks: 9 },
+      { chapter: 'Electrostatics and Capacitors', marks: 4 },
+      { chapter: 'Modern Physics', marks: 12 }
     ],
-    mat: [
-      { chapter: 'Verbal', marks: 5 },
-      { chapter: 'Numerical', marks: 5 },
-      { chapter: 'Logical', marks: 5 },
-      { chapter: 'Spatial', marks: 5 }
-    ]
+    mat: MAT_20
   },
   ce_2026: {
-    label: 'CEE BAMS/BSc MLT/BSc MIT/BPT/BPharm/B Optometry (2026)',
-    biology: {
-      zoology: [
-        { chapter: 'Evolution', marks: 4 },
-        { chapter: 'Classification', marks: 8 },
-        { chapter: 'Plasmodium/Earthworm/Frog', marks: 8 },
-        { chapter: 'Human Biology/Diseases', marks: 14 },
-        { chapter: 'Animal Tissues', marks: 4 },
-        { chapter: 'Environmental/Behavior', marks: 2 }
-      ],
-      botany: [
-        { chapter: 'Biodiversity', marks: 11 },
-        { chapter: 'Ecology', marks: 5 },
-        { chapter: 'Cell Biology/Genetics', marks: 12 },
-        { chapter: 'Anatomy/Physiology', marks: 7 },
-        { chapter: 'Applied Botany', marks: 5 }
-      ]
-    },
+    label: 'Group II: BAMS, BSc MLT, BSc MIT/BSc Radiotherapy Technology, BPT, B Pharm & B Optometry',
+    zoology: ZOOLOGY_40,
+    botany: BOTANY_40,
     chemistry: [
-      { chapter: 'General/Physical', marks: 14 },
-      { chapter: 'Inorganic', marks: 12 },
-      { chapter: 'Organic', marks: 14 }
+      { chapter: 'Physical Chemistry', marks: 14 },
+      { chapter: 'Inorganic Chemistry', marks: 7 },
+      { chapter: 'Organic Chemistry', marks: 13 },
+      { chapter: 'Applied Chemistry', marks: 3 },
+      { chapter: 'Analytical Chemistry', marks: 3 }
     ],
     physics: [
       { chapter: 'Mechanics', marks: 8 },
-      { chapter: 'Heat/Thermodynamics', marks: 5 },
-      { chapter: 'Optics', marks: 5 },
-      { chapter: 'Electricity/Magnetism', marks: 7 },
-      { chapter: 'Sound/Electrostatics', marks: 5 },
-      { chapter: 'Modern/Nuclear Physics', marks: 5 },
-      { chapter: 'Semiconductors', marks: 3 },
-      { chapter: 'Particle Physics/Universe', marks: 2 }
+      { chapter: 'Heat and Thermodynamics', marks: 6 },
+      { chapter: 'Waves and Optics', marks: 6 },
+      { chapter: 'Current Electricity and Magnetism', marks: 7 },
+      { chapter: 'Electrostatics and Capacitors', marks: 3 },
+      { chapter: 'Modern Physics', marks: 10 }
     ],
-    mat: [
-      { chapter: 'Verbal', marks: 5 },
-      { chapter: 'Numerical', marks: 5 },
-      { chapter: 'Logical', marks: 5 },
-      { chapter: 'Spatial', marks: 5 }
-    ],
+    mat: MAT_20,
     pcl: [{ chapter: 'PCL Level Contents', marks: 20 }]
   },
   bph: {
-    label: 'Common Entrance Exam BPH',
-    biology: {
-      zoology: [
-        { chapter: 'Evolution', marks: 4 },
-        { chapter: 'Classification', marks: 8 },
-        { chapter: 'Plasmodium/Earthworm/Frog', marks: 8 },
-        { chapter: 'Human Biology/Diseases', marks: 14 },
-        { chapter: 'Animal Tissues', marks: 4 },
-        { chapter: 'Environmental/Behavior', marks: 2 }
-      ],
-      botany: [
-        { chapter: 'Biodiversity', marks: 11 },
-        { chapter: 'Ecology', marks: 5 },
-        { chapter: 'Cell Biology/Genetics', marks: 12 },
-        { chapter: 'Anatomy/Physiology', marks: 7 },
-        { chapter: 'Applied Botany', marks: 5 }
-      ]
-    },
+    label: 'Group III: BPH (Bachelor in Public Health)',
+    zoology: ZOOLOGY_40,
+    botany: BOTANY_40,
     chemistry: [
-      { chapter: 'General/Physical', marks: 14 },
-      { chapter: 'Inorganic', marks: 12 },
-      { chapter: 'Organic', marks: 14 }
+      { chapter: 'Physical Chemistry', marks: 14 },
+      { chapter: 'Inorganic Chemistry', marks: 7 },
+      { chapter: 'Organic Chemistry', marks: 13 },
+      { chapter: 'Applied Chemistry', marks: 3 },
+      { chapter: 'Analytical Chemistry', marks: 3 }
     ],
     physics: [
       { chapter: 'Mechanics', marks: 8 },
-      { chapter: 'Heat/Thermodynamics', marks: 5 },
-      { chapter: 'Optics', marks: 5 },
-      { chapter: 'Electricity/Magnetism', marks: 7 },
-      { chapter: 'Sound/Electrostatics', marks: 5 },
-      { chapter: 'Modern/Nuclear Physics', marks: 5 },
-      { chapter: 'Semiconductors', marks: 3 },
-      { chapter: 'Particle Physics/Universe', marks: 2 }
+      { chapter: 'Heat and Thermodynamics', marks: 6 },
+      { chapter: 'Waves and Optics', marks: 6 },
+      { chapter: 'Current Electricity and Magnetism', marks: 7 },
+      { chapter: 'Electrostatics and Capacitors', marks: 3 },
+      { chapter: 'Modern Physics', marks: 10 }
     ],
-    mat: [
-      { chapter: 'Verbal', marks: 5 },
-      { chapter: 'Numerical', marks: 5 },
-      { chapter: 'Logical', marks: 5 },
-      { chapter: 'Spatial', marks: 5 }
-    ],
-    health: [{ chapter: 'Pre-requisite Health Knowledge', marks: 20 }]
+    mat: MAT_20,
+    health: [
+      { chapter: 'Determinants of Health', marks: 5 },
+      { chapter: 'Communicable Diseases', marks: 5 },
+      { chapter: 'Non-communicable Diseases', marks: 3 },
+      { chapter: 'WASH', marks: 2 },
+      { chapter: 'Biostatistics and Epidemiology', marks: 5 }
+    ]
   },
   bns: {
-    label: 'Bachelor in Nursing Science (BNS)',
+    label: 'Group IV: BNS (Bachelor in Nursing Science)/BMS (Bachelor in Midwifery Science)',
     nursing: [
-      { chapter: 'Community Health', marks: 30 },
-      { chapter: 'Adult Health', marks: 30 },
-      { chapter: 'Child Health', marks: 30 },
-      { chapter: 'Behavior Science/Mental Health', marks: 42 },
-      { chapter: 'Fundamentals', marks: 24 },
-      { chapter: 'Leadership/Management', marks: 24 }
+      { chapter: 'Community Health Nursing', marks: 25 },
+      { chapter: 'Adult Health Nursing', marks: 25 },
+      { chapter: 'Child Health Nursing', marks: 25 },
+      { chapter: 'Midwifery and Gynecological Nursing', marks: 25 },
+      { chapter: 'Fundamentals of Nursing', marks: 20 },
+      { chapter: 'Leadership and Management', marks: 20 },
+      { chapter: 'Behavioral Science and Mental Health', marks: 10 }
     ],
-    mat: [
-      { chapter: 'Verbal', marks: 5 },
-      { chapter: 'Numerical', marks: 5 },
-      { chapter: 'Logical', marks: 5 },
-      { chapter: 'Spatial', marks: 5 }
-    ]
+    healthScience: [
+      { chapter: 'Biochemistry', marks: 5 },
+      { chapter: 'Microbiology', marks: 5 },
+      { chapter: 'Pharmacology', marks: 6 },
+      { chapter: 'Anatomy', marks: 7 },
+      { chapter: 'Physiology', marks: 7 }
+    ],
+    mat: MAT_20
   }
 };
 
 // ---------- Question Bank Access ----------
 const bank = {
-  biology: qBank.biology,
+  zoology: qBank.zoology,
+  botany: qBank.botany,
   chemistry: qBank.chemistry,
   physics: qBank.physics,
-  mental_agility: qBank.mentalAgility
+  mental_agility: qBank.mentalAgility,
+  health: qBank.health,
+  nursing: qBank.nursing
 };
 
 // Simple deterministic pseudo-random for stable seeds
@@ -213,53 +206,10 @@ function pickQuestions(bankArr, count, seed) {
   return result;
 }
 
-  // Map syllabus chapters to bank topic filters
-  function getBankQuestions(bank, subject, chapter) {
-    let filtered;
-    if (subject === 'biology' && chapter === 'Plasmodium/Earthworm/Frog') {
-      filtered = bank.filter(q => q.subTopic === 'Zoology' && ['Plasmodium', 'Earthworm', 'Frog'].includes(q.topic));
-    } else if (subject === 'biology' && chapter === 'Cell Biology/Genetics') {
-      filtered = bank.filter(q => q.subTopic === 'Botany' && ['Cell Biology', 'Genetics'].includes(q.topic));
-    } else if (subject === 'biology' && chapter === 'Anatomy/Physiology') {
-      filtered = bank.filter(q => q.subTopic === 'Botany' && q.topic === 'Plant Physiology');
-    } else if (subject === 'biology' && chapter === 'Environmental/Behavior') {
-      filtered = bank.filter(q => q.subTopic === 'Zoology' && q.topic === 'Environmental');
-    } else if (subject === 'biology' && chapter === 'Human Biology/Diseases') {
-      filtered = bank.filter(q => q.subTopic === 'Zoology' && q.topic === 'Human Biology');
-    } else if (subject === 'physics' && chapter === 'Sound/Electrostatics') {
-      filtered = bank.filter(q => ['Electrostatics', 'Sound'].includes(q.topic));
-    } else if (subject === 'physics' && chapter === 'Modern/Nuclear Physics') {
-      filtered = bank.filter(q => ['Modern Physics', 'Nuclear Physics'].includes(q.topic));
-    } else if (subject === 'physics' && chapter === 'Optics') {
-      filtered = bank.filter(q => ['Waves and Optics', 'Optics'].includes(q.topic));
-    } else if (subject === 'chemistry' && chapter === 'General/Physical') {
-      filtered = bank.filter(q => ['General Chemistry', 'Physical Chemistry'].includes(q.topic));
-    } else if (subject === 'chemistry' && chapter === 'Inorganic') {
-      filtered = bank.filter(q => q.topic === 'Inorganic Chemistry');
-    } else if (subject === 'chemistry' && chapter === 'Organic') {
-      filtered = bank.filter(q => q.topic === 'Organic Chemistry');
-    } else if (subject === 'physics' && chapter === 'Heat/Thermodynamics') {
-      filtered = bank.filter(q => q.topic === 'Heat and Thermodynamics');
-    } else if (subject === 'physics' && chapter === 'Electricity/Magnetism') {
-      filtered = bank.filter(q => q.topic === 'Electricity and Magnetism');
-    } else if (subject === 'physics' && chapter === 'Particle Physics/Universe') {
-      filtered = bank.filter(q => q.topic === 'Particle Physics');
-    } else if (subject === 'mental_agility' && chapter === 'Verbal') {
-      filtered = bank.filter(q => q.topic === 'Verbal Reasoning');
-    } else if (subject === 'mental_agility' && chapter === 'Numerical') {
-      filtered = bank.filter(q => q.topic === 'Numerical Reasoning');
-    } else if (subject === 'mental_agility' && chapter === 'Logical') {
-      filtered = bank.filter(q => q.topic === 'Logical Reasoning');
-    } else if (subject === 'mental_agility' && chapter === 'Spatial') {
-      filtered = bank.filter(q => q.topic === 'Spatial Reasoning');
-    } else if (subject === 'biology') {
-      const sub = chapter === 'Evolution' || chapter === 'Classification' || chapter === 'Plasmodium/Earthworm/Frog' || chapter === 'Human Biology/Diseases' || chapter === 'Animal Tissues' || chapter === 'Environmental/Behavior' ? 'Zoology' : 'Botany';
-      filtered = bank.filter(q => q.subTopic === sub && q.topic === chapter);
-    } else {
-      filtered = bank.filter(q => q.topic === chapter);
-    }
-    return filtered;
-  }
+// Map syllabus chapters to bank topic filters
+function getBankQuestions(bankArr, chapter) {
+  return bankArr.filter(q => q.topic === chapter);
+}
 
 // ---------- Insert helpers ----------
 const insertSet = db.prepare(`
@@ -319,14 +269,18 @@ async function buildFullSet(syllabusKey, setNumber) {
     }
   }
 
-  // Biology (Zoology + Botany)
-  if (syl.biology) {
-    for (const z of syl.biology.zoology) {
-      const qs = pickQuestions(getBankQuestions(bank.biology, 'biology', z.chapter), z.marks, seed + z.marks);
+  // Zoology
+  if (syl.zoology) {
+    for (const z of syl.zoology) {
+      const qs = pickQuestions(getBankQuestions(bank.zoology, z.chapter), z.marks, seed + z.marks);
       for (const q of qs) await addQuestionUnique('biology', q, z.chapter, 'Zoology');
     }
-    for (const b of syl.biology.botany) {
-      const qs = pickQuestions(getBankQuestions(bank.biology, 'biology', b.chapter), b.marks, seed + b.marks * 2);
+  }
+
+  // Botany
+  if (syl.botany) {
+    for (const b of syl.botany) {
+      const qs = pickQuestions(getBankQuestions(bank.botany, b.chapter), b.marks, seed + b.marks * 2);
       for (const q of qs) await addQuestionUnique('biology', q, b.chapter, 'Botany');
     }
   }
@@ -334,7 +288,7 @@ async function buildFullSet(syllabusKey, setNumber) {
   // Chemistry
   if (syl.chemistry) {
     for (const c of syl.chemistry) {
-      const qs = pickQuestions(getBankQuestions(bank.chemistry, 'chemistry', c.chapter), c.marks, seed + c.marks * 3);
+      const qs = pickQuestions(getBankQuestions(bank.chemistry, c.chapter), c.marks, seed + c.marks * 3);
       for (const q of qs) await addQuestionUnique('chemistry', q, c.chapter, q.subTopic);
     }
   }
@@ -342,7 +296,7 @@ async function buildFullSet(syllabusKey, setNumber) {
   // Physics
   if (syl.physics) {
     for (const p of syl.physics) {
-      const qs = pickQuestions(getBankQuestions(bank.physics, 'physics', p.chapter), p.marks, seed + p.marks * 4);
+      const qs = pickQuestions(getBankQuestions(bank.physics, p.chapter), p.marks, seed + p.marks * 4);
       for (const q of qs) await addQuestionUnique('physics', q, p.chapter, q.subTopic);
     }
   }
@@ -350,26 +304,40 @@ async function buildFullSet(syllabusKey, setNumber) {
   // MAT
   if (syl.mat) {
     for (const m of syl.mat) {
-      const qs = pickQuestions(getBankQuestions(bank.mental_agility, 'mental_agility', m.chapter), m.marks, seed + m.marks * 5);
+      const qs = pickQuestions(getBankQuestions(bank.mental_agility, m.chapter), m.marks, seed + m.marks * 5);
       for (const q of qs) await addQuestionUnique('mental_agility', q, m.chapter, q.subTopic);
     }
   }
 
-  // PCL / Health / Nursing
+  // PCL (Group II)
   if (syl.pcl) {
     const pclBank = [...bank.chemistry, ...bank.physics].filter(q => !usedTexts.has(q.text.trim().toLowerCase()));
     const qs = pickQuestions(pclBank, 20, seed + 999);
     for (const q of qs) await addQuestionUnique('pcl', q, 'PCL Level Contents', 'PCL');
   }
+
+  // Health (Group III - BPH)
   if (syl.health) {
-    const healthBank = [...bank.biology, ...bank.chemistry].filter(q => !usedTexts.has(q.text.trim().toLowerCase()));
-    const qs = pickQuestions(healthBank, 20, seed + 888);
-    for (const q of qs) await addQuestionUnique('health', q, 'Pre-requisite Health Knowledge', 'Health');
+    for (const h of syl.health) {
+      const qs = pickQuestions(getBankQuestions(bank.health, h.chapter), h.marks, seed + h.marks * 6);
+      for (const q of qs) await addQuestionUnique('health', q, h.chapter, 'Health');
+    }
   }
+
+  // Nursing Core (Group IV - BNS/BMS)
   if (syl.nursing) {
-    const nursingBank = [...bank.biology, ...bank.chemistry, ...bank.physics].filter(q => !usedTexts.has(q.text.trim().toLowerCase()));
-    const qs = pickQuestions(nursingBank, 180, seed + 777);
-    for (const q of qs) await addQuestionUnique('health', q, 'Nursing Core', 'Nursing');
+    for (const n of syl.nursing) {
+      const qs = pickQuestions(getBankQuestions(bank.nursing, n.chapter), n.marks, seed + n.marks * 7);
+      for (const q of qs) await addQuestionUnique('health', q, n.chapter, 'Nursing');
+    }
+  }
+
+  // Basic & Integrated Health Science (Group IV - BNS/BMS)
+  if (syl.healthScience) {
+    for (const hs of syl.healthScience) {
+      const qs = pickQuestions(getBankQuestions(bank.nursing, hs.chapter), hs.marks, seed + hs.marks * 8);
+      for (const q of qs) await addQuestionUnique('health', q, hs.chapter, 'Nursing');
+    }
   }
 
   return setId;
