@@ -382,6 +382,9 @@ app.get('/api/v1/teacher/results/:id', auth(['teacher', 'admin']), wrap(async (r
     LEFT JOIN question_options opt ON opt.id = aa.selected_option_id
     WHERE aa.attempt_id = ?
   `).all(result.attempt_id);
+  for (const a of answers) {
+    a.options = await db.prepare('SELECT id, option_label, option_text, is_correct FROM question_options WHERE question_id = ? ORDER BY sort_order').all(a.question_id);
+  }
   result.answers = answers;
   res.json({ success: true, data: result });
 }));
@@ -436,6 +439,10 @@ app.get('/api/v1/student/results/:id', auth(['student']), wrap(async (req, res) 
   `).all(result.attempt_id);
   if (!result.feedback_enabled) {
     for (const a of answers) { delete a.rationale; delete a.correct_label; }
+  } else {
+    for (const a of answers) {
+      a.options = await db.prepare('SELECT id, option_label, option_text, is_correct FROM question_options WHERE question_id = ? ORDER BY sort_order').all(a.question_id);
+    }
   }
   result.answers = answers;
   res.json({ success: true, data: result });

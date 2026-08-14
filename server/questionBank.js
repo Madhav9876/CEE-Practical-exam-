@@ -498,7 +498,6 @@ const qBank = {
     { topic: 'Anatomy', subTopic: 'Nursing', text: 'Which is the largest organ of the human body?', options: ['Skin', 'Liver', 'Brain', 'Lungs'], correct: 0, rationale: 'The skin is the largest organ.', level: 'recall' },
     { topic: 'Anatomy', subTopic: 'Nursing', text: 'Which part of the brain controls breathing and heart rate?', options: ['Medulla oblongata', 'Cerebrum', 'Cerebellum', 'Thalamus'], correct: 0, rationale: 'The medulla oblongata controls vital functions.', level: 'recall' },
     { topic: 'Anatomy', subTopic: 'Nursing', text: 'Which valve is located between the left atrium and left ventricle?', options: ['Mitral valve', 'Tricuspid valve', 'Aortic valve', 'Pulmonary valve'], correct: 0, rationale: 'The mitral (bicuspid) valve is between the left atrium and ventricle.', level: 'recall' },
-    { topic: 'Anatomy', subTopic: 'Nursing', text: 'Which structure filters blood in the kidney?', options: ['Glomerulus', 'Ureter', 'Urethra', 'Bladder'], correct: 0, rationale: 'The glomerulus filters blood.', level: 'recall' },
 
     // ---- Physiology (7) ----
     { topic: 'Physiology', subTopic: 'Nursing', text: 'Which process is the exchange of gases in the lungs?', options: ['External respiration', 'Internal respiration', 'Digestion', 'Excretion'], correct: 0, rationale: 'External respiration is gas exchange in the lungs.', level: 'recall' },
@@ -507,7 +506,6 @@ const qBank = {
     { topic: 'Physiology', subTopic: 'Nursing', text: 'Which process is the formation of urine in the kidney?', options: ['Filtration, reabsorption and secretion', 'Digestion', 'Respiration', 'Circulation'], correct: 0, rationale: 'Urine forms by filtration, reabsorption and secretion.', level: 'recall' },
     { topic: 'Physiology', subTopic: 'Nursing', text: 'Which blood cells are responsible for oxygen transport?', options: ['Red blood cells', 'White blood cells', 'Platelets', 'Plasma cells'], correct: 0, rationale: 'Red blood cells carry oxygen via hemoglobin.', level: 'recall' },
     { topic: 'Physiology', subTopic: 'Nursing', text: 'Which is the normal respiratory rate of an adult at rest?', options: ['12-20 breaths per minute', '30-40 breaths per minute', '5-10 breaths per minute', '40-50 breaths per minute'], correct: 0, rationale: 'Normal adult respiratory rate is 12-20 breaths/min.', level: 'recall' },
-    { topic: 'Physiology', subTopic: 'Nursing', text: 'Which organ produces bile?', options: ['Liver', 'Gallbladder', 'Pancreas', 'Stomach'], correct: 0, rationale: 'The liver produces bile.', level: 'recall' },
 
     // ---- Additional Community Health Nursing (to reach 25) ----
     { topic: 'Community Health Nursing', subTopic: 'Nursing', text: 'Which is the first level of contact between the community and the health system?', options: ['Primary health care center', 'District hospital', 'Zonal hospital', 'Medical college'], correct: 0, rationale: 'Primary health care is the first level of contact.', level: 'recall' },

@@ -54,9 +54,25 @@ export default function ReviewResult({ user, reviewData, onLogout, onBack }) {
                 <div className="question-text">{i + 1}. {a.question_text}</div>
                 <div>{a.is_correct ? <span className="badge badge-released">✓</span> : <span className="badge badge-pending">✗</span>}</div>
               </div>
-              <div className="muted" style={{ marginTop: 6 }}>
-                Student: <strong>{a.selected_label || '—'}</strong> | Correct: <strong>{a.correct_label}</strong> | Marks: {a.marks_awarded}
-              </div>
+              {a.options && (
+                <div style={{ marginTop: 8 }}>
+                  {a.options.map((opt) => {
+                    const isCorrectOpt = !!opt.is_correct;
+                    const isChosen = a.selected_option_id != null && opt.id === a.selected_option_id;
+                    const cls = isCorrectOpt ? 'option correct' : (isChosen ? 'option incorrect' : 'option');
+                    const tag = isCorrectOpt ? ' ✓ correct' : (isChosen ? ' — student answer' : '');
+                    return (
+                      <div key={opt.id} className={cls}>
+                        <span className="option-label">{opt.option_label}.</span>
+                        <span>{opt.option_text}{tag}</span>
+                      </div>
+                    );
+                  })}
+                  <div className="muted" style={{ marginTop: 6 }}>
+                    Student: <strong>{a.selected_label || '—'}</strong> | Correct: <strong>{a.correct_label}</strong> | Marks: {a.marks_awarded}
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>

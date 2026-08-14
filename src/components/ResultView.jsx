@@ -51,11 +51,25 @@ export default function ResultView({ user, resultData, onLogout, onBack }) {
                       : <span className="badge badge-pending">✗ {a.marks_awarded}</span>}
                 </div>
               </div>
-              {result.feedback_enabled && (
-                <div style={{ marginTop: 8, fontSize: '0.85rem' }}>
-                  <div>Your answer: <strong>{a.selected_label || '—'}</strong></div>
-                  <div>Correct: <strong>{a.correct_label || '—'}</strong></div>
-                  {a.rationale && <div className="muted mt-16" style={{ background: 'var(--light)', padding: 10, borderRadius: 6, marginTop: 8 }}>💡 <strong>Rationale:</strong> {a.rationale}</div>}
+              {result.feedback_enabled && a.options && (
+                <div style={{ marginTop: 8 }}>
+                  {a.options.map((opt) => {
+                    const isCorrectOpt = !!opt.is_correct;
+                    const isChosen = a.selected_option_id != null && opt.id === a.selected_option_id;
+                    const cls = isCorrectOpt ? 'option correct' : (isChosen ? 'option incorrect' : 'option');
+                    const tag = isCorrectOpt ? ' ✓ correct' : (isChosen ? ' — your answer' : '');
+                    return (
+                      <div key={opt.id} className={cls}>
+                        <span className="option-label">{opt.option_label}.</span>
+                        <span>{opt.option_text}{tag}</span>
+                      </div>
+                    );
+                  })}
+                  <div style={{ fontSize: '0.85rem', marginTop: 8 }}>
+                    <div>Your answer: <strong>{a.selected_label || '—'}</strong></div>
+                    <div>Correct: <strong>{a.correct_label || '—'}</strong></div>
+                    {a.rationale && <div className="muted mt-16" style={{ background: 'var(--light)', padding: 10, borderRadius: 6, marginTop: 8 }}>💡 <strong>Rationale:</strong> {a.rationale}</div>}
+                  </div>
                 </div>
               )}
             </div>
