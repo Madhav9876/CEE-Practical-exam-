@@ -167,14 +167,71 @@ function seededRandom(seed) {
   let s = seed;
   return () => { s = (s * 9301 + 49297) % 233280; return s / 233280; };
 }
+
+// Pick N questions from a bank without replacement (shuffle then slice)
 function pickQuestions(bankArr, count, seed) {
   const rnd = seededRandom(seed);
+  const shuffled = bankArr.slice();
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(rnd() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
   const result = [];
-  for (let i = 0; i < count; i++) {
-    const idx = Math.floor(rnd() * bankArr.length);
-    result.push(bankArr[idx]);
+  const take = Math.min(count, shuffled.length);
+  for (let i = 0; i < take; i++) result.push(shuffled[i]);
+  for (let i = take; i < count; i++) {
+    const idx = Math.floor(rnd() * shuffled.length);
+    result.push(shuffled[idx]);
   }
   return result;
+}
+
+// Map syllabus chapters to bank topic filters
+function getBankQuestions(bank, subject, chapter) {
+  let filtered;
+  if (subject === 'biology' && chapter === 'Plasmodium/Earthworm/Frog') {
+    filtered = bank.filter(q => q.subTopic === 'Zoology' && ['Plasmodium', 'Earthworm', 'Frog'].includes(q.topic));
+  } else if (subject === 'biology' && chapter === 'Cell Biology/Genetics') {
+    filtered = bank.filter(q => q.subTopic === 'Botany' && ['Cell Biology', 'Genetics'].includes(q.topic));
+  } else if (subject === 'biology' && chapter === 'Anatomy/Physiology') {
+    filtered = bank.filter(q => q.subTopic === 'Botany' && q.topic === 'Plant Physiology');
+  } else if (subject === 'biology' && chapter === 'Environmental/Behavior') {
+    filtered = bank.filter(q => q.subTopic === 'Zoology' && q.topic === 'Environmental');
+  } else if (subject === 'biology' && chapter === 'Human Biology/Diseases') {
+    filtered = bank.filter(q => q.subTopic === 'Zoology' && q.topic === 'Human Biology');
+  } else if (subject === 'physics' && chapter === 'Sound/Electrostatics') {
+    filtered = bank.filter(q => ['Electrostatics', 'Sound'].includes(q.topic));
+  } else if (subject === 'physics' && chapter === 'Modern/Nuclear Physics') {
+    filtered = bank.filter(q => ['Modern Physics', 'Nuclear Physics'].includes(q.topic));
+  } else if (subject === 'physics' && chapter === 'Optics') {
+    filtered = bank.filter(q => ['Waves and Optics', 'Optics'].includes(q.topic));
+  } else if (subject === 'chemistry' && chapter === 'General/Physical') {
+    filtered = bank.filter(q => ['General Chemistry', 'Physical Chemistry'].includes(q.topic));
+  } else if (subject === 'chemistry' && chapter === 'Inorganic') {
+    filtered = bank.filter(q => q.topic === 'Inorganic Chemistry');
+  } else if (subject === 'chemistry' && chapter === 'Organic') {
+    filtered = bank.filter(q => q.topic === 'Organic Chemistry');
+  } else if (subject === 'physics' && chapter === 'Heat/Thermodynamics') {
+    filtered = bank.filter(q => q.topic === 'Heat and Thermodynamics');
+  } else if (subject === 'physics' && chapter === 'Electricity/Magnetism') {
+    filtered = bank.filter(q => q.topic === 'Electricity and Magnetism');
+  } else if (subject === 'physics' && chapter === 'Particle Physics/Universe') {
+    filtered = bank.filter(q => q.topic === 'Particle Physics');
+  } else if (subject === 'mental_agility' && chapter === 'Verbal') {
+    filtered = bank.filter(q => q.topic === 'Verbal Reasoning');
+  } else if (subject === 'mental_agility' && chapter === 'Numerical') {
+    filtered = bank.filter(q => q.topic === 'Numerical Reasoning');
+  } else if (subject === 'mental_agility' && chapter === 'Logical') {
+    filtered = bank.filter(q => q.topic === 'Logical Reasoning');
+  } else if (subject === 'mental_agility' && chapter === 'Spatial') {
+    filtered = bank.filter(q => q.topic === 'Spatial Reasoning');
+  } else if (subject === 'biology') {
+    const sub = chapter === 'Evolution' || chapter === 'Classification' || chapter === 'Plasmodium/Earthworm/Frog' || chapter === 'Human Biology/Diseases' || chapter === 'Animal Tissues' || chapter === 'Environmental/Behavior' ? 'Zoology' : 'Botany';
+    filtered = bank.filter(q => q.subTopic === sub && q.topic === chapter);
+  } else {
+    filtered = bank.filter(q => q.topic === chapter);
+  }
+  return filtered;
 }
 
 // Cognitive distribution per set: 100 recall, 60 understanding, 40 application
@@ -226,9 +283,13 @@ async function main() {
 
         const questionsToInsert = [];
         const optionsToInsert = [];
+        const usedTexts = new Set();
 
         const addQuestions = (subject, qs, topic, subTopic) => {
           for (const q of qs) {
+            const key = q.text.trim().toLowerCase();
+            if (usedTexts.has(key)) continue;
+            usedTexts.add(key);
             const level = COGNITIVE_PATTERN[cognitiveCounter % COGNITIVE_PATTERN.length];
             cognitiveCounter++;
             questionsToInsert.push([setId, subject, topic, subTopic, level, 1.00, 0.25, q.text, q.rationale]);
@@ -240,37 +301,40 @@ async function main() {
 
         if (syl.biology) {
           for (const z of syl.biology.zoology) {
-            addQuestions('biology', pickQuestions(bank.biology.filter(q => q.subTopic === 'Zoology'), z.marks, seed + z.marks), z.chapter, 'Zoology');
+            addQuestions('biology', pickQuestions(getBankQuestions(bank.biology, 'biology', z.chapter), z.marks, seed + z.marks), z.chapter, 'Zoology');
           }
           for (const b of syl.biology.botany) {
-            addQuestions('biology', pickQuestions(bank.biology.filter(q => q.subTopic === 'Botany'), b.marks, seed + b.marks * 2), b.chapter, 'Botany');
+            addQuestions('biology', pickQuestions(getBankQuestions(bank.biology, 'biology', b.chapter), b.marks, seed + b.marks * 2), b.chapter, 'Botany');
           }
         }
         if (syl.chemistry) {
           for (const c of syl.chemistry) {
-            addQuestions('chemistry', pickQuestions(bank.chemistry, c.marks, seed + c.marks * 3), c.chapter, '');
+            addQuestions('chemistry', pickQuestions(getBankQuestions(bank.chemistry, 'chemistry', c.chapter), c.marks, seed + c.marks * 3), c.chapter, '');
           }
         }
         if (syl.physics) {
           for (const p of syl.physics) {
-            addQuestions('physics', pickQuestions(bank.physics, p.marks, seed + p.marks * 4), p.chapter, '');
+            addQuestions('physics', pickQuestions(getBankQuestions(bank.physics, 'physics', p.chapter), p.marks, seed + p.marks * 4), p.chapter, '');
           }
         }
         if (syl.mat) {
           for (const m of syl.mat) {
-            addQuestions('mental_agility', pickQuestions(bank.mental_agility, m.marks, seed + m.marks * 5), m.chapter, '');
+            addQuestions('mental_agility', pickQuestions(getBankQuestions(bank.mental_agility, 'mental_agility', m.chapter), m.marks, seed + m.marks * 5), m.chapter, '');
           }
         }
         if (syl.pcl) {
-          const qs = pickQuestions([...bank.chemistry, ...bank.physics], 20, seed + 999);
+          const pclBank = [...bank.chemistry, ...bank.physics].filter(q => !usedTexts.has(q.text.trim().toLowerCase()));
+          const qs = pickQuestions(pclBank, 20, seed + 999);
           addQuestions('pcl', qs, 'PCL Level Contents', 'PCL');
         }
         if (syl.health) {
-          const qs = pickQuestions([...bank.biology, ...bank.chemistry], 20, seed + 888);
+          const healthBank = [...bank.biology, ...bank.chemistry].filter(q => !usedTexts.has(q.text.trim().toLowerCase()));
+          const qs = pickQuestions(healthBank, 20, seed + 888);
           addQuestions('health', qs, 'Pre-requisite Health Knowledge', 'Health');
         }
         if (syl.nursing) {
-          const qs = pickQuestions([...bank.biology, ...bank.chemistry, ...bank.physics], 180, seed + 777);
+          const nursingBank = [...bank.biology, ...bank.chemistry, ...bank.physics].filter(q => !usedTexts.has(q.text.trim().toLowerCase()));
+          const qs = pickQuestions(nursingBank, 180, seed + 777);
           addQuestions('health', qs, 'Nursing Core', 'Nursing');
         }
 
